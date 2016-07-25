@@ -16,7 +16,6 @@
     - TfL updates
     - Weather
     - Time / Date
-  - Screensaver art when idle
 
 ## Nice to haves (~priority order)
 - Gestures (leapmotion)
@@ -30,6 +29,7 @@
   - News feed
 - Multiple user accounts
 - Themes: fonts, styles
+- Screensaver art when idle
 - Drag-and-drop to set widget layout
 - Audio alarm
 
