@@ -12,21 +12,25 @@
 
 ## MVP
 - Customisable dashboard
-  - Multiple user accounts
   - Widgets
-    - News feed
     - TfL updates
     - Weather
-    - Time / date
-    - Emails
-    - Calendars
+    - Time / Date
   - Screensaver art when idle
-  - Themes: fonts, styles, layout
 
-## Nice to haves
-- Mobile (pushbullet) notifications
+## Nice to haves (~priority order)
 - Gestures (leapmotion)
-- Sleep / Wake
+  - Sleep / Wake app
+  - Switch users
+  - Close notifications
+- Mobile (pushbullet) notifications
+- Further dashboard widgets
+  - Emails
+  - Calendars
+  - News feed
+- Multiple user accounts
+- Themes: fonts, styles
+- Drag-and-drop to set widget layout
 - Audio alarm
 
 ----------------
