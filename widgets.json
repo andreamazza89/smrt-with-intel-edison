@@ -1,0 +1,68 @@
+[
+    {
+        "name": "weather",
+        "settings": {
+            "location": "London"
+        },
+        "gridLocation": 0
+    },
+    {
+        "name": "tfl",
+        "settings": {
+            "lines": [
+                "central",
+                "jubilee",
+                "northern"
+            ]
+        },
+        "gridLocation": 0
+    },
+    {
+        "name": "test",
+        "location": "3"
+    },
+    {
+        "name": "test",
+        "location": "3"
+    },
+    {
+        "name": "test",
+        "location": "1"
+    },
+    {
+        "name": "test",
+        "location": "2"
+    },
+    {
+        "name": "test",
+        "location": "2"
+    },
+    {
+        "name": "test",
+        "location": "1"
+    },
+    {
+        "name": "test",
+        "location": "8"
+    },
+    {
+        "name": "test",
+        "location": "1"
+    },
+    {
+        "name": "test",
+        "location": "1"
+    },
+    {
+        "name": "test",
+        "location": "5"
+    },
+    {
+        "name": "test",
+        "location": "1"
+    },
+    {
+        "name": "test",
+        "location": "1"
+    }
+]
