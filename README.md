@@ -3,8 +3,8 @@
 ## TODO
 
 - ~~User stories?~~
-- Set up Rails app (with MongoDB/Mongoid)
-- Set up Raspbian on a Raspberry Pi (enable SSH and wifi)
+- ~~Set up Rails app (with MongoDB/Mongoid)~~
+- ~~Set up Raspbian on a Raspberry Pi (enable SSH and wifi)~~
 - Clone rails repo to Raspberry pi
 - Set up RP to auto-kiosk-mode a browser and load the rails app
 
