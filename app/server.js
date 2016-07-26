@@ -1,8 +1,10 @@
-var express = require("express");
+var express = require('express');
 var app = express();
 
-app.get("/mirror", function(req, res){
-  res.send('sunny');
+app.use(express.static('./app/public'));
+
+app.get('/mirror', function(req, res){
+  res.sendfile('./app/public/mirror.html');
 });
 
 app.listen(3000, function(){
