@@ -1,15 +1,6 @@
 
 
 function leap(){
-  // var leapjs = require('leapjs');
-
-//   Leap.loop({
-//
-//   hand: function(hand){
-//     console.log( hand.screenPosition() );
-//   }
-//
-// }).use('screenPosition');
 
 
   var controller  = new Leap.Controller({enableGestures: true});
@@ -49,8 +40,6 @@ function leap(){
         }
       }
   });
-
-
 
   controller.connect();
 }

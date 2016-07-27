@@ -1,119 +1,121 @@
-<!-- <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Snap Grid</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
-  <style>
-  .draggable { width: 90px; height: 80px; padding: 5px; float: left; margin: 0 10px 10px 0; font-size: .9em; }
-  .ui-widget-header p, .ui-widget-content p { margin: 0; }
-  #snaptarget { height: 140px; }
-  </style>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#draggable" ).draggable({ snap: ".grid-box", snapMode: "inner", snapTolerance: 103, cursor: "pointer" });
-  } );
-  </script>
-</head>
-<body>
 
-<div id="main-wrapper">
-
-  <h1><span style="font-weight: normal">smrt</span><span style="">mirror</span> - dashboard</h1>
-
-  <div id="grid-container">
-    <div class="grid-box"></div>
-    <div class="grid-box"></div>
-    <div class="grid-box"></div>
-    <div class="grid-box"></div>
-    <div class="grid-box"></div>
-    <div class="grid-box"></div>
-    <div class="grid-box"></div>
-    <div class="grid-box"></div>
-    <div class="grid-box"></div>
-  </div>
-
-  <div id="widget-list-container">
-    <div id="draggable" class="widget-box"></div>
-  </div>
-
-</div>
-
-<script>
-  window.onload = function() {
-
-
-    $("#draggable").mouseup(function(){
-      var origin = $("#grid-container").position();
-      var location = $(this).position();
-      var locationKey = "loc"+(location.top-origin.top)+(location.left-origin.left);
-      console.log(this);
-      jsonData = {
-        name: "test",
-        location: gridPosition[locationKey]
-      }
-
-      console.log(jsonData);
-
-      $.ajax({
-        url: "/api/widgets",
-        dataType: 'json',
-        type: 'POST',
-        data: jsonData,
-        success: function(data) {
-          console.log("success");
-        }.bind(this),
-        error: function(xhr, status, err) {
-          console.log(err.toString());
-        }.bind(this)
-      });
-    });
-
-    var gridPosition = {
-      loc00: 1,
-      loc0205: 2,
-      loc0410: 3,
-      loc2050: 4,
-      loc205205: 5,
-      loc205410: 6,
-      loc4100: 7,
-      loc410205: 8,
-      loc410410: 9
-    }
-  };
-</script>
-
-</body>
-</html> -->
 
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Snap Grid</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
+    <style>
+    .draggable { width: 90px; height: 80px; padding: 5px; float: left; margin: 0 10px 10px 0; font-size: .9em; }
+    .ui-widget-header p, .ui-widget-content p { margin: 0; }
+    #snaptarget { height: 140px; }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script>
+    $( function() {
+      $( "#draggable" ).draggable({ snap: ".grid-box", snapMode: "inner", snapTolerance: 103, cursor: "pointer" });
+    } );
+    </script>
     <title>DOM Visualizer - Leap</title>
 
 
   </head>
   <body>
+
+    <div id="main-wrapper">
+
+      <h1><span style="font-weight: normal">smrt</span><span style="">mirror</span> - dashboard</h1>
+
+      <div id="grid-container">
+        <div class="grid-box"></div>
+        <div class="grid-box"></div>
+        <div class="grid-box"></div>
+        <div class="grid-box"></div>
+        <div class="grid-box"></div>
+        <div class="grid-box"></div>
+        <div class="grid-box"></div>
+        <div class="grid-box"></div>
+        <div class="grid-box"></div>
+      </div>
+
+      <div id="widget-list-container">
+        <div id="draggable" class="widget-box"></div>
+      </div>
+
+    </div>
+
+    <script>
+      window.onload = function() {
+
+
+        $("#draggable").mouseup(function(){
+          var origin = $("#grid-container").position();
+          var location = $(this).position();
+          var locationKey = "loc"+(location.top-origin.top)+(location.left-origin.left);
+          console.log(this);
+          jsonData = {
+            name: "test",
+            location: gridPosition[locationKey]
+          }
+
+          console.log(jsonData);
+
+          $.ajax({
+            url: "/api/widgets",
+            dataType: 'json',
+            type: 'POST',
+            data: jsonData,
+            success: function(data) {
+              console.log("success");
+            }.bind(this),
+            error: function(xhr, status, err) {
+              console.log(err.toString());
+            }.bind(this)
+          });
+        });
+
+        var gridPosition = {
+          loc00: 1,
+          loc0205: 2,
+          loc0410: 3,
+          loc2050: 4,
+          loc205205: 5,
+          loc205410: 6,
+          loc4100: 7,
+          loc410205: 8,
+          loc410410: 9
+        }
+      };
+    </script>
     Hey
     <button type="submit" onClick="leap()"></button>
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-    <script src="https://js.leapmotion.com/leap-0.6.4.js"></script>
-    <script src="https://js.leapmotion.com/leap-plugins-0.1.11.js"></script>
+    <!-- <script src="https://js.leapmotion.com/leap-0.6.4.js"></script>
+    <script src="https://js.leapmotion.com/leap-plugins-0.1.11.js"></script> -->
+
+    <script src="scripts/leap.min.js"></script>
     <script src="scripts/leaptrainer.min.js"></script>
-    <script src="scripts/leapcursor-with-dependencies.min.js?color=#2ECC71&width=300&height=300&scrollSpeed=1&gestureColor=#2ECC71"></script>
-    <!-- <script src="scripts/bundle.js"></script> -->
-    <!-- <script src="scripts/task.js"></script> -->
+    <script src="scripts/three.min.js"></script>
+    <script src="scripts/detector.min.js"></script>
+    <script src="scripts/leapcursor.js"></script>
+
+    <script src="scripts/task.js"></script>
+
     <script type="text/javascript">
     $(document).ready(function() {
       var trainer = new LeapTrainer.Controller()
-      trainer.fromJSON('{"name":"DRAG-DROP","pose":false,"data":[[{"x":-0.016776761972928655,"y":0.15126856138828554,"z":0.3913074440801342,"stroke":1},{"x":-0.18085837634051566,"y":0.04375341039153402,"z":-0.3488570142571486,"stroke":1},{"x":-0.13533808794109842,"y":0.07750308869241654,"z":0.33820504395733086,"stroke":1},{"x":-0.008417362381415383,"y":0.01435963660075018,"z":-0.36608802693666104,"stroke":1},{"x":-0.25133958279345187,"y":0.005592776753212014,"z":0.2858898931364645,"stroke":1},{"x":0.15104069567235334,"y":-0.01678666890129872,"z":-0.3011682304796404,"stroke":1},{"x":-0.36154117571597977,"y":-0.06583366685084022,"z":0.23278589113459502,"stroke":1},{"x":0.2927109210237969,"y":-0.042523576723635145,"z":-0.19731976068171475,"stroke":1},{"x":-0.4574934167263365,"y":-0.12782335437452347,"z":0.17429869123283137,"stroke":1},{"x":0.2998257514395144,"y":-0.02071234354990191,"z":-0.06997258195216782,"stroke":1},{"x":-0.3373142847966495,"y":-0.08785961739651854,"z":0.03208967623616077,"stroke":1},{"x":0.2762734878739087,"y":0.014218062501684225,"z":0.07059691968423376,"stroke":1},{"x":-0.2511735174547055,"y":-0.049045346212843635,"z":-0.08986866129944249,"stroke":1},{"x":0.23093330240716792,"y":0.05265990246490518,"z":0.19862660147187516,"stroke":1},{"x":-0.15965413056583116,"y":-0.010660422095208039,"z":-0.21219953125832067,"stroke":1},{"x":0.1858025202607856,"y":0.09100601658652113,"z":0.3276426200559698,"stroke":1},{"x":-0.04491383359997059,"y":0.0063663123544389355,"z":-0.3160515397530521,"stroke":1},{"x":0.11325492821279848,"y":0.08073232943352424,"z":0.3728183578227806,"stroke":1},{"x":0.11247234012489438,"y":-0.019415306429430415,"z":-0.3788636772316506,"stroke":1},{"x":0.5425065832736635,"y":-0.09679979463307149,"z":-0.14387211496257815,"stroke":1}]]}');
-      trainer.on('DRAG-DROP', function() { alert('Woo!!'); });
-      });
+
+      trainer.fromJSON('{"name":"GRAB-DROP","pose":false,"data":[[{"x":-0.17129746486142844,"y":0.20850686694827025,"z":0.26352651067565325,"stroke":1},{"x":0.2514635680097548,"y":-0.07141509843321195,"z":0.0005162219792316791,"stroke":1},{"x":-0.20079467940446072,"y":-0.0002198518081845957,"z":0.12472285425920493,"stroke":1},{"x":0.2599197251505281,"y":-0.09708537603885103,"z":0.09098810100264959,"stroke":1},{"x":0.010281231605264285,"y":-0.04266437398002079,"z":-0.0830318536126246,"stroke":1},{"x":0.1081176668194066,"y":-0.03328635078151887,"z":0.18130840111641056,"stroke":1},{"x":0.25152391007616004,"y":-0.06345410467900704,"z":-0.09026277260274757,"stroke":1},{"x":-0.2520083778306569,"y":-0.046578544257822485,"z":-0.052570633663521715,"stroke":1},{"x":-0.03499314982559487,"y":0.03748151418628967,"z":0.22290442377238062,"stroke":1},{"x":0.38582562250379093,"y":-0.18194014898516503,"z":0.030023629633210647,"stroke":1},{"x":-0.010738222477246095,"y":0.06735647530929711,"z":-0.24830037801192056,"stroke":1},{"x":-0.37441554556553325,"y":0.029191637152475303,"z":-0.03107355775003462,"stroke":1},{"x":0.10749775203426426,"y":-0.04548517977509636,"z":0.19143473825776958,"stroke":1},{"x":0.3474081745975103,"y":-0.07617345164423028,"z":-0.05776903149116258,"stroke":1},{"x":-0.0636158333355511,"y":0.17527288828235277,"z":-0.3456698476951835,"stroke":1},{"x":-0.6141743774962091,"y":0.14049309850442365,"z":-0.19674680586931426,"stroke":1}]]}');
+
+      // trainer.on('GRAB-DROP', function() { alert('Grab!!'); });
+  
+    })
+
     </script>
 
   </body>
