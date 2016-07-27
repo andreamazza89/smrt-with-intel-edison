@@ -2,11 +2,13 @@
    "widgets": [
          {
              "name": "tfl",
+             "location": {"row": 1, "column": 1, "width": 1, "height": 1 },
              "active": true
          },
 
  {
              "name": "weather",
+             "location": {"row": 2, "column": 2, "width": 1, "height": 1 },
              "active": false
          }
      ]

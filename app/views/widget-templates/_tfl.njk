@@ -1,1 +1,8 @@
-HI FROM THE TFL WIDGET TEMPLATE
+{% set rowClass = 'row-' + widget.location.row %}
+{% set columnClass = 'column-' + widget.location.column %}
+{% set heightClass = 'height-' + widget.location.height %}
+{% set widthClass = 'width-' + widget.location.width %}
+
+<div class="{{ rowClass }} {{ columnClass }} {{ heightClass }} {{ widthClass }}">
+  
+</div>
