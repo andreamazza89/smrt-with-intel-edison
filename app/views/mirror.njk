@@ -1,0 +1,11 @@
+{% extends './layout.njk' %}
+
+{% block mainContent %}
+
+  {% for widget in widgetData %}
+    {% if widget.active %}
+      {% include './widget-templates/_' + widget.name + '.njk' %}
+    {% endif %}
+  {% endfor %}
+
+{% endblock %}
