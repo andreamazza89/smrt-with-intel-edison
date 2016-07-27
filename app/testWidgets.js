@@ -1,4 +1,4 @@
-[
+var testJSON = [
     {
         "name": "weather",
         "settings": {
@@ -10,7 +10,7 @@
           "height": "1",
           "width": "1"
         },
-        "active": "false"
+        "active": "true"
     },
     {
         "name": "tfl",
@@ -27,7 +27,7 @@
           "height": "1",
           "width": "1"
         },
-        "active": "false"
+        "active": "true"
     },
     {
         "name": "clock",
@@ -40,6 +40,6 @@
           "height": "1",
           "width": "1"
         },
-        "active": "false"
+        "active": "true"
     }
-]
+];
