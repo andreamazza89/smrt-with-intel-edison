@@ -18,7 +18,7 @@ app.use(sass({
 
 app.set('view engine', 'njk');
 app.use(express.static('./app/public'));
-app.get('/widgets/main.js', browserify('./app/widgets/main.js'));
+app.get('/bundle.js', browserify('./app/widgets/main.js'));
 
 app.get('/mirror', function(req, res){
 
