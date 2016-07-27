@@ -3,11 +3,18 @@ var express = require('express');
 var app = express();
 var nunjucks = require('nunjucks');
 var fs = require('fs');
+var sass = require('node-sass-middleware');
 
 nunjucks.configure(__dirname + '/views', {
     watch: true,
     express: app
   });
+
+app.use(sass({
+  src: __dirname + '/sass',
+  dest:__dirname + '/public',
+  outputStyle: 'compressed'
+}));
 
 app.set('view engine', 'njk');
 app.use(express.static('./app/public'));
