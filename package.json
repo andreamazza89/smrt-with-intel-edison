@@ -1,0 +1,33 @@
+{
+  "name": "makers-mirror",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "browserify-middleware": "^7.0.0",
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3",
+    "sinon": "^1.17.5",
+    "zombie": "^4.2.1"
+  },
+  "scripts": {
+    "test": "mocha --recursive",
+    "start": "node app/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vannio/makers-mirror.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vannio/makers-mirror/issues"
+  },
+  "homepage": "https://github.com/vannio/makers-mirror#readme"
+}

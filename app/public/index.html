@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snap Grid</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
+  <style>
+  .draggable { width: 90px; height: 80px; padding: 5px; float: left; margin: 0 10px 10px 0; font-size: .9em; }
+  .ui-widget-header p, .ui-widget-content p { margin: 0; }
+  #snaptarget { height: 140px; }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#draggable" ).draggable({ snap: ".grid-box", snapMode: "inner", snapTolerance: 103, cursor: "pointer" });
+  } );
+  </script>
+</head>
+<body>
+
+<div id="main-wrapper">
+
+  <h1><span style="font-weight: normal">smrt</span><span style="">mirror</span> - dashboard</h1>
+
+  <div id="grid-container">
+    <div class="grid-box"></div>
+    <div class="grid-box"></div>
+    <div class="grid-box"></div>
+    <div class="grid-box"></div>
+    <div class="grid-box"></div>
+    <div class="grid-box"></div>
+    <div class="grid-box"></div>
+    <div class="grid-box"></div>
+    <div class="grid-box"></div>
+  </div>
+
+  <div id="widget-list-container">
+    <div id="draggable" class="widget-box"></div>
+  </div>
+
+</div>
+
+<script>
+  window.onload = function() {
+
+
+    $("#draggable").mouseup(function(){
+      var origin = $("#grid-container").position();
+      var location = $(this).position();
+      var locationKey = "loc"+(location.top-origin.top)+(location.left-origin.left);
+      console.log(this);
+      jsonData = {
+        name: "test",
+        location: gridPosition[locationKey]
+      }
+
+      console.log(jsonData);
+
+      $.ajax({
+        url: "/api/widgets",
+        dataType: 'json',
+        type: 'POST',
+        data: jsonData,
+        success: function(data) {
+          console.log("success");
+        }.bind(this),
+        error: function(xhr, status, err) {
+          console.log(err.toString());
+        }.bind(this)
+      });
+    });
+
+    var gridPosition = {
+      loc00: 1,
+      loc0205: 2,
+      loc0410: 3,
+      loc2050: 4,
+      loc205205: 5,
+      loc205410: 6,
+      loc4100: 7,
+      loc410205: 8,
+      loc410410: 9
+    }
+  };
+</script>
+
+</body>
+</html>
