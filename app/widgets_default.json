@@ -1,5 +1,6 @@
-[
-    {
+{
+    "widgets": [
+      {
         "name": "weather",
         "settings": {
             "location": "London"
@@ -41,5 +42,5 @@
           "width": "1"
         },
         "active": "false"
-    }
-]
+    }]
+}
