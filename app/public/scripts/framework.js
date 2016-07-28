@@ -1,19 +1,22 @@
 ;(function(exports){
-  function widgetJSON(){
+
+  function widgetJSON(sjson){
+
+    if (sjson === undefined){
+      this.jsonMethod = setJSON;
+    } else {
+      this.jsonMethod = sjson;
+    }
 
   }
 
   widgetJSON.prototype = {
-    toggleActive: function(data, widgetName, sjson) {
+    toggleActive: function(data, widgetName) {
       var widgets = JSON.parse(data).widgets;
       for(var i = 0; i < widgets.length; i++) {
         if (widgets[i].name === widgetName) {
           widgets[i].active = widgets[i].active === "true" ? "false" : "true";
-          if (sjson === undefined){
-            setJSON({ widgets: widgets });
-          } else {
-            sjson({ widgets: widgets });
-          }
+          this.jsonMethod({ widgets: widgets });
           return widgets[i].active;
         }
       }

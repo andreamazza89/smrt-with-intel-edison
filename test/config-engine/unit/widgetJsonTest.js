@@ -8,15 +8,15 @@ describe('Widget JSON', function(){
 
   beforeEach(function(){
     setJSON = sinon.spy();
-    wjson = new widgetJSON();
+    wjson = new widgetJSON(setJSON);
   });
 
   it('should toggle the active state of a widget from false to true', function(){
-    expect(wjson.toggleActive('{"widgets": [ {"name": "weather", "active": "false"} ] }','weather', setJSON)).to.equal("true");
+    expect(wjson.toggleActive('{"widgets": [ {"name": "weather", "active": "false"} ] }','weather')).to.equal("true");
   });
 
   it('should toggle the active state of a widget from true to false', function(){
-    expect(wjson.toggleActive('{"widgets": [ {"name": "weather", "active": "true"} ] }','weather', setJSON)).to.equal("false");
+    expect(wjson.toggleActive('{"widgets": [ {"name": "weather", "active": "true"} ] }','weather')).to.equal("false");
   });
 
 });
