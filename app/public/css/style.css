@@ -102,11 +102,35 @@ li  {
   width: 280px;
   height: 200px;
   float: left;
+  position: relative;
 }
 
-.widget-box {
+.widget-box-weather {
   width: 200px;
   height: 200px;
-  background-color: red;
+  background-color: #2ecc71;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+}
 
+.widget-box-tfl {
+  width: 200px;
+  height: 200px;
+  background-color: #3498db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+}
+
+.widget-box-clock {
+  width: 200px;
+  height: 200px;
+  background-color: #9b59b6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
 }

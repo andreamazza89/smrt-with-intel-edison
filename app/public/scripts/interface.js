@@ -14,10 +14,10 @@ $(document).ready(function(){
 
   var setDragBox = function(widgetName)  {
     if($('#widget-check-'+widgetName).attr('class') === 'widget-check'){
-      $("#widget-container").html('');
+      $("#widget-box-"+widgetName).remove();
     } else {
-      $("#widget-container").html("<div id='widget-box-"+widgetName+"' class='widget-box' ></div>");
-      $("#widget-box-"+widgetName).draggable({ snap: ".grid-box", snapMode: "inner", snapTolerance: 103, cursor: "pointer" });
+      $("#widget-container").append("<div id='widget-box-"+widgetName+"' class='widget-box-"+widgetName+"' >"+widgetName+"</div>");
+      $("#widget-box-"+widgetName).draggable({ snap: ".grid-box", snapMode: "inner", snapTolerance: 103, cursor: "pointer" }).css("position", "absolute");
     }
   };
 
