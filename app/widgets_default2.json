@@ -1,5 +1,6 @@
-var testJSON = [
-    {
+{
+    "widgets": [
+      {
         "name": "weather",
         "settings": {
             "location": "London"
@@ -10,7 +11,7 @@ var testJSON = [
           "height": "1",
           "width": "1"
         },
-        "active": "true"
+        "active": "false"
     },
     {
         "name": "tfl",
@@ -27,7 +28,7 @@ var testJSON = [
           "height": "1",
           "width": "1"
         },
-        "active": "true"
+        "active": "false"
     },
     {
         "name": "clock",
@@ -40,6 +41,6 @@ var testJSON = [
           "height": "1",
           "width": "1"
         },
-        "active": "true"
-    }
-];
+        "active": "false"
+    }]
+}
