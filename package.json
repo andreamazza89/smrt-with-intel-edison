@@ -7,26 +7,19 @@
     "test": "test"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "body-parser": "^1.4.3",
-    "browserify": "^13.1.0",
-    "express": "^4.4.5",
-    "leapjs": "^0.6.4",
-    "leapjs-plugins": "^0.1.11"
-=======
     "body-parser": "^1.15.2",
     "browserify-middleware": "^7.0.0",
     "express": "^4.14.0",
     "json-file": "^0.1.0",
     "jsonfile": "^2.3.1",
-    "mocha-phantomjs": "^4.1.0"
+    "mocha-phantomjs": "^4.1.0",
+    "sinon": "^1.17.5"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^2.5.3",
     "sinon": "^1.17.5",
     "zombie": "^4.2.1"
->>>>>>> 03ae1042d55f937b650b7a2483d81fd6981cc212
   },
   "scripts": {
     "test": "mocha --recursive",
@@ -41,12 +34,5 @@
   "bugs": {
     "url": "https://github.com/vannio/makers-mirror/issues"
   },
-<<<<<<< HEAD
-  "homepage": "https://github.com/reactjs/react-tutorial",
-  "engines": {
-    "node": "0.12.x"
-  }
-=======
   "homepage": "https://github.com/vannio/makers-mirror#readme"
->>>>>>> 03ae1042d55f937b650b7a2483d81fd6981cc212
 }

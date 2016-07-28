@@ -1,23 +1,22 @@
 var expect = require('chai').expect;
-var path = require('path');
-var WidgetJSON = require('../../../app/public/scripts/widget-json').WidgetJSON;
-
+var widgetJSON = require('../../../app/public/scripts/framework.js').widgetJSON;
+var sinon = require('sinon');
 
 describe('Widget JSON', function(){
-
-  var WIDGETS_FILE = path.join(__dirname, '../../../app/public/scripts/testWidgets.json');
+  var setJSON;
+  var wjson;
 
   beforeEach(function(){
+    setJSON = sinon.spy();
+    wjson = new widgetJSON();
   });
 
-  it('should toggle the active state of a widget', function(){
-    var wjson = new WidgetJSON();
-    expect(wjson.toggleActive("weather", WIDGETS_FILE)).to.equal("true");
+  it('should toggle the active state of a widget from false to true', function(){
+    expect(wjson.toggleActive('{"widgets": [ {"name": "weather", "active": "false"} ] }','weather', setJSON)).to.equal("true");
   });
 
-  it('should toggle the active state of a widget', function(){
-    var wjson = new WidgetJSON();
-    expect(wjson.toggleActive("weather", WIDGETS_FILE)).to.equal("false");
+  it('should toggle the active state of a widget from true to false', function(){
+    expect(wjson.toggleActive('{"widgets": [ {"name": "weather", "active": "true"} ] }','weather', setJSON)).to.equal("false");
   });
 
 });
