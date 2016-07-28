@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  var widgetJSON = require('widgetJSON');
+  var widgetJSON = require('/framework.js').widgetJSON;
   var wjson = new widgetJSON();
 
   function logger(data) {
