@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  var widgetJSON = require('widgetJSON');
+  var wjson = new widgetJSON();
 
   function logger(data) {
     console.log(data);
@@ -6,7 +8,7 @@ $(document).ready(function(){
 
   $('.widget-check').click(function(event) {
     var widgetName = $(this).attr('id').match(/\w+$/)[0];
-    getJSON(toggleActive, widgetName);
+    getJSON(wjson.toggleActive, widgetName);
     // getJSON2(setListStyles);
     // setDragBox(widgetName);
   });
