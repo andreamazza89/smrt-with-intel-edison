@@ -15,9 +15,14 @@ describe('Widget buttons', function(){
      });
    });
 
-  it('should create a box when button clicked', function(){
+  it('should create a box when widget enabled', function(){
     browser.pressButton("#widget-check-weather");
-    expect(browser.html()).to.contain("#widget-box-weather");
+    expect(browser.html()).to.contain('id="widget-box-weather"');
+  });
+
+  it('should remove a box when widget disabled', function(){
+    browser.pressButton("#widget-check-weather");
+    expect(browser.html()).to.not.contain('id="widget-box-weather"');
   });
 
 });

@@ -11,7 +11,7 @@
                 "height": "1",
                 "width": "1"
             },
-            "active": "true"
+            "active": "false"
         },
         {
             "name": "tfl",
@@ -28,7 +28,7 @@
                 "height": "1",
                 "width": "1"
             },
-            "active": "true"
+            "active": "false"
         },
         {
             "name": "clock",
@@ -41,7 +41,7 @@
                 "height": "1",
                 "width": "1"
             },
-            "active": "true"
+            "active": "false"
         }
     ]
 }

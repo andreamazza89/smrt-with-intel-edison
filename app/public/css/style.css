@@ -97,3 +97,16 @@ li  {
   cursor: pointer;
   outline: none;
 }
+
+#widget-container {
+  width: 280px;
+  height: 200px;
+  float: left;
+}
+
+.widget-box {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+
+}
