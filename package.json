@@ -8,17 +8,24 @@
   },
   "dependencies": {
     "browserify-middleware": "^7.0.0",
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "node-sass-middleware": "^0.9.8",
+    "nunjucks": "^2.4.2"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^2.5.3",
     "sinon": "^1.17.5",
-    "zombie": "^4.2.1"
+    "wdio-dot-reporter": "0.0.6",
+    "wdio-mocha-framework": "^0.3.10",
+    "wdio-selenium-standalone-service": "0.0.5",
+    "wdio-spec-reporter": "0.0.3",
+    "webdriverio": "^4.2.3"
   },
   "scripts": {
-    "test": "mocha --recursive",
-    "start": "node app/server.js"
+    "test": "./node_modules/.bin/wdio wdio.conf.js",
+    "start": "node app/server.js",
+    "andreas-special-test": ""
   },
   "repository": {
     "type": "git",

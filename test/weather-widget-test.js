@@ -1,26 +1,45 @@
-var app = require('../app/server');
-var Browser = require('zombie');
+require('../app/server');
 var expect = require('chai').expect;
-var stub = require('sinon').stub();
 
-describe('Weather-wiget', function(){
-  var browser;
-  var ajaxstub;
+describe('Mirror page',function(){
+  context('When there are no active widgets', function(){
+    before(function(){
+      process.env.widget_path = '/../test/widget-configs/all-inactive';
+      browser.url('/mirror');
+    });
 
-   before(function(){
-     browser = new Browser({ site: 'http://localhost:3000' });
-   });
-
-   before(function(done){
-     browser.visit('/mirror', function(){
-       stub(browser.window.$, 'ajax').returns(true);
-       done();
-     });
-   });
-
-  it('should display weather', function(){
-    expect(browser.text()).to.contain('21°C Sunny');
+    it('has no widgets when not configured', function(){
+      expect(browser.getText('.main-content')).to.be.empty;
+    });
   });
 
+  context('When TfL is an active widget', function(){
+    before(function(){
+      process.env.widget_path = '/../test/widget-configs/tfl-active';
+      browser
+        .url('/mirror')
+        .waitForText('#tfl-widget');
+    });
 
+    it('displays a tfl widget', function(){
+      expect(browser.getText('#tfl-widget')).to.not.be.empty;
+    });
+  });
+
+  context('When multiple widgets are active', function(){
+    before(function(){
+      process.env.widget_path = '/../test/widget-configs/multiple-active';
+      browser
+        .url('/mirror')
+        .waitForText('#tfl-widget');
+
+      browser
+        .waitForText('#weather-widget');
+    });
+
+    it('displays multiple widgets', function(){
+      expect(browser.getText('#tfl-widget')).to.not.be.empty;
+      expect(browser.getText('#weather-widget')).to.not.be.empty;
+    });
+  });
 });
