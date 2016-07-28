@@ -1,55 +1,104 @@
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+# S.M.R.T mk II
 
-# React Tutorial
+## TODO
 
-This is the React comment box example from [the React tutorial](http://facebook.github.io/react/docs/tutorial.html).
+- ~~User stories?~~
+- ~~Set up Rails app (with MongoDB/Mongoid)~~
+- ~~Set up Raspbian on a Raspberry Pi (enable SSH and wifi)~~
+- Clone rails repo to Raspberry pi
+- Set up RP to auto-kiosk-mode a browser and load the rails app
 
-## To use
+-----------------
 
-There are several simple server implementations included. They all serve static files from `public/` and handle requests to `/api/comments` to fetch or add data. Start a server with one of the following:
-
-### Node
-
-```sh
-npm install
-node server.js
+## User stories
+```
+As a User
+So that I can check the time and date handsfree
+I want a smart mirror to tell me the time and date
 ```
 
-### Python
-
-```sh
-pip install -r requirements.txt
-python server.py
+```
+As a User
+So that I can dress appropriately
+I want a smart mirror to show me the local weather
 ```
 
-### Ruby
-```sh
-ruby server.rb
+```
+As a User
+So that I can plan my journey to work
+I want a smart mirror to alert me of any disruptions on my usual journey
 ```
 
-### PHP
-```sh
-php server.php
+```
+As a User
+So that I can configure a smart mirror to my liking
+I want to add widgets from a control panel
 ```
 
-### Go
-```sh
-go run server.go
+```
+As a User
+So that I can see information that is relevant to me
+I want to customise the widgets
 ```
 
-### Perl
-
-```sh
-cpan Mojolicious
-perl server.pl
+```
+As a User
+So that I can further configure a smart mirror
+I want to position widgets where I like
 ```
 
-And visit <http://localhost:3000/>. Try opening multiple tabs!
+```
+As a green User
+So that I can save electricity
+I want to put a smart mirror to sleep with a gesture
+```
 
-## Changing the port
+-----------------
 
-You can change the port number by setting the `$PORT` environment variable before invoking any of the scripts above, e.g.,
+## MVP
+- Customisable dashboard
+  - Widgets
+    - TfL updates
+    - Weather
+    - Time / Date
 
-```sh
-PORT=3001 node server.js
+## Nice to haves (~priority order)
+- Gestures (leapmotion)
+  - Sleep / Wake app
+  - Switch users
+  - Close notifications
+- Mobile (pushbullet) notifications
+- Further dashboard widgets
+  - Emails
+  - Calendars
+  - News feed
+- Multiple user accounts
+- Themes: fonts, styles
+- Screensaver art when idle
+- Drag-and-drop to set widget layout
+- Audio alarm
+
+----------------
+
+### Suggested data structure
+```
+{
+  name: 'Jane',
+  widgets: {
+    time: {
+      format: 'dd-mm-yy, h:MM'
+      gridPosition: '0,0'
+    },
+    weather: {
+      location: 'N4 1AB',
+      gridPosition: '0,1'
+    },
+    travel: {
+      tubes: ['piccadilly', 'victoria'],
+      buses: [259, 279],
+      gridPosition: '0,2',
+      gridSize: '3,1'
+    }
+  }
+}  
 ```

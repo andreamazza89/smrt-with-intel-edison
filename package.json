@@ -1,38 +1,52 @@
 {
-  "name": "react-tutorial",
-  "version": "0.0.0",
-  "private": true,
-  "license": "see LICENSE file",
-  "description": "Code from the React tutorial.",
-  "main": "server.js",
+  "name": "makers-mirror",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
   "dependencies": {
+<<<<<<< HEAD
     "body-parser": "^1.4.3",
     "browserify": "^13.1.0",
     "express": "^4.4.5",
     "leapjs": "^0.6.4",
     "leapjs-plugins": "^0.1.11"
+=======
+    "body-parser": "^1.15.2",
+    "browserify-middleware": "^7.0.0",
+    "express": "^4.14.0",
+    "json-file": "^0.1.0",
+    "jsonfile": "^2.3.1",
+    "mocha-phantomjs": "^4.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3",
+    "sinon": "^1.17.5",
+    "zombie": "^4.2.1"
+>>>>>>> 03ae1042d55f937b650b7a2483d81fd6981cc212
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "mocha --recursive",
+    "start": "node app/server.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/reactjs/react-tutorial.git"
+    "url": "git+https://github.com/vannio/makers-mirror.git"
   },
-  "keywords": [
-    "react",
-    "tutorial",
-    "comment",
-    "example"
-  ],
-  "author": "petehunt",
+  "author": "",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/reactjs/react-tutorial/issues"
+    "url": "https://github.com/vannio/makers-mirror/issues"
   },
+<<<<<<< HEAD
   "homepage": "https://github.com/reactjs/react-tutorial",
   "engines": {
     "node": "0.12.x"
   }
+=======
+  "homepage": "https://github.com/vannio/makers-mirror#readme"
+>>>>>>> 03ae1042d55f937b650b7a2483d81fd6981cc212
 }

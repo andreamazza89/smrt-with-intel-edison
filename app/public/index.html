@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snap Grid</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/button-styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+  <script src="scripts/interface.js"></script>
+  <script src="scripts/json.js"></script>
+
+</head>
+<body>
+
+<div id="main-wrapper">
+
+  <h1><span style="font-weight: normal">smrt</span><span style="">mirror</span> - dashboard</h1>
+
+  <div id="grid-container">
+    <div class="grid-box"></div>
+    <div class="grid-box"></div>
+    <div class="grid-box"></div>
+    <div class="grid-box"></div>
+    <div class="grid-box"></div>
+    <div class="grid-box"></div>
+    <div class="grid-box"></div>
+    <div class="grid-box"></div>
+    <div class="grid-box"></div>
+  </div>
+
+  <div id="widget-list-container">
+    <ul>
+      <li>
+        <div class="widget-name" id="widget-name-weather">weather</div>
+        <button class="widget-check" id="widget-check-weather"> </button>
+        <button class="widget-settings" id="widget-settings-weather"> </button>
+      </li>
+
+      <li>
+        <div class="widget-name" id="widget-name-tfl">tfl</div>
+        <button class="widget-check" id="widget-check-tfl"> </button>
+        <button class="widget-settings" id="widget-settings-tfl"> </button>
+      </li>
+
+      <li>
+        <div class="widget-name" id="widget-name-clock">clock</div>
+        <button class="widget-check" id="widget-check-clock"> </button>
+        <button class="widget-settings" id="widget-settings-clock"> </button>
+      </li>
+    </ul>
+
+
+  </div>
+  <div id="draggable" class="widget-box"></div>
+</div>
+
+</body>
+</html>
