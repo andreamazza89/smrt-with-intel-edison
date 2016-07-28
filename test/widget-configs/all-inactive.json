@@ -1,0 +1,10 @@
+{ "widgets": [
+  {
+  "name": "tfl",
+   "active": false
+  },
+  {
+  "name": "weather",
+   "active": false
+  }
+]}

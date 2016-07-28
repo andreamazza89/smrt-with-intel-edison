@@ -40,12 +40,15 @@ var weatherType = {
 
 
 (function(exports){
+  $.support.cors = true;
+
   function ajaxCall(){
 		'use strict';
 
-  	$.ajax({
+    $.ajax({
 	    url: api,
 	    success: function(data) {
+        console.log('hello2');
 	    	this.printWeather(data.SiteRep);
 	    },
 	    printWeather: function(data) {
@@ -53,7 +56,10 @@ var weatherType = {
 	      var values = data.DV.Location.Period[0].Rep[1];
 
 				container.html(values[parameters[3].name] + '&deg;<sup>c</sup> ' + weatherType[values[parameters[8].name]]);
-	    }
+	    },
+      error: function(err){
+        console.log(err);
+      }
 	  });
 	}
 

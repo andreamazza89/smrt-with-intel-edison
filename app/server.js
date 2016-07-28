@@ -21,8 +21,7 @@ app.use(express.static('./app/public'));
 app.get('/bundle.js', browserify('./app/widgets/main.js'));
 
 app.get('/mirror', function(req, res){
-
-  fs.readFile(__dirname + '/widgets.json', function(err, data) {
+  fs.readFile(__dirname + (process.env.widget_path || '/widgets') +  '.json', function(err, data) {
     if (err) {
       console.error(err);
       process.exit(1);
