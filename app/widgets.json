@@ -6,12 +6,12 @@
                 "location": "London"
             },
             "location": {
-                "row": "2",
-                "column": "0",
+                "row": "0",
+                "column": "2",
                 "height": "1",
                 "width": "1"
             },
-            "active": "true"
+            "active": "false"
         },
         {
             "name": "tfl",
@@ -28,7 +28,7 @@
                 "height": "1",
                 "width": "1"
             },
-            "active": "true"
+            "active": "false"
         },
         {
             "name": "clock",
@@ -42,7 +42,7 @@
                 "height": "1",
                 "width": "1"
             },
-            "active": "true"
+            "active": "false"
         }
     ]
 }

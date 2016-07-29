@@ -4,6 +4,8 @@ var widgetJSON = require('./framework').widgetJSON;
 var toggleStyles = require('./styling').toggleStyles;
 var setListStyles = require('./styling').setListStyles;
 
+var positionKey = { 0: 0, 205: 1, 410: 2};
+
 $(document).ready(function(){
 
   var wjson = new widgetJSON(setJSON);
@@ -18,13 +20,13 @@ $(document).ready(function(){
   });
 
   $('body').on('mouseup', '.widget-box', function(event){
-    var widgetName = $(this).attr('id').match(/\w+$/)[0];
+    var widgetName = $(this).data('name');
     var location = gridPosition($(this).position());
     getJSON(wjson.setGridPosition, widgetName, location);
   });
 
   var setDragBox = function(widgetName)  {
-    if($('#widget-check-'+widgetName).attr('class') === 'widget-check'){
+    if($('#widget-check-'+widgetName).hasClass('widget-check')) {
       $("#widget-box-"+widgetName).remove();
     } else {
       $("#grid-container").append("<div id='widget-box-"+widgetName+"' class='widget-box widget-box-"+widgetName+"' >"+widgetName+"</div>");
@@ -32,14 +34,12 @@ $(document).ready(function(){
     }
   };
 
-  var gridPosition = function(location) {
-    key = { 0: 0, 205: 1, 410: 2};
+  var getGridPosition = function(location) {
     //defaulting to width/height of 1 for now
-    return {  row: key[location.top],
-              column: key[location.left],
+    return {  row: positionKey[location.top],
+              column: positionKey[location.left],
               height: 1,
               width: 1 };
   };
-
 
 });

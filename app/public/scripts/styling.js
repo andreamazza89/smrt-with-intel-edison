@@ -15,8 +15,7 @@
   };
 
   var toggleStyles = function(name)  {
-      console.log(name);
-      if($("#widget-name-"+name).attr('class') === 'widget-name') {
+      if($("#widget-name-"+name).hasClass('widget-name')) {
         $("#widget-name-"+name).attr('class', 'widget-name-' + name +'-active');
         $("#widget-check-"+name).attr('class', 'widget-check-' + name +'-active');
       }
