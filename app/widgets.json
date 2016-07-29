@@ -6,8 +6,8 @@
                 "location": "London"
             },
             "location": {
-                "row": "0",
-                "col": "0",
+                "row": "1",
+                "column": "1",
                 "height": "1",
                 "width": "1"
             },
@@ -23,8 +23,8 @@
                 ]
             },
             "location": {
-                "row": "1",
-                "col": "0",
+                "row": "0",
+                "column": "1",
                 "height": "1",
                 "width": "1"
             },
@@ -36,8 +36,8 @@
                 "format": "24"
             },
             "location": {
-                "row": "2",
-                "col": "0",
+                "row": "0",
+                "column": "1",
                 "height": "1",
                 "width": "1"
             },

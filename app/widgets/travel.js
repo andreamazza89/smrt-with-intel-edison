@@ -1,6 +1,6 @@
 // TFL API
 var api = 'https://api.tfl.gov.uk/line/mode/tube,overground,dlr,tflrail/status';
-var container = $('#js-tube-updates');
+var container = $('#tfl-widget');
 
 // Pick tube lines of interest
 var lines = [

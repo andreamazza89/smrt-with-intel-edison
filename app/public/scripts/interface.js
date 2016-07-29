@@ -1,6 +1,12 @@
+var getJSON = require('./json').getJSON;
+var setJSON = require('./json').setJSON;
+var widgetJSON = require('./framework').widgetJSON;
+var toggleStyles = require('./styling').toggleStyles;
+var setListStyles = require('./styling').setListStyles;
+
 $(document).ready(function(){
-  var widgetJSON = require('/framework.js').widgetJSON;
-  var wjson = new widgetJSON();
+
+  var wjson = new widgetJSON(setJSON);
 
   getJSON(setListStyles);
 
@@ -30,7 +36,7 @@ $(document).ready(function(){
     key = { 0: 0, 205: 1, 410: 2};
     //defaulting to width/height of 1 for now
     return {  row: key[location.top],
-              col: key[location.left],
+              column: key[location.left],
               height: 1,
               width: 1 };
   };

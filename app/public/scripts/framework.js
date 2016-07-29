@@ -1,13 +1,8 @@
 ;(function(exports){
 
+  var writeJSON;
   function widgetJSON(sjson){
-
-    if (sjson === undefined){
-      this.writeJSON = setJSON;
-    } else {
-      this.writeJSON = sjson;
-    }
-
+    writeJSON = sjson;
   }
 
   widgetJSON.prototype = {
@@ -16,7 +11,7 @@
       for(var i = 0; i < widgets.length; i++) {
         if (widgets[i].name === widgetName) {
           widgets[i].active = widgets[i].active === "true" ? "false" : "true";
-          this.writeJSON({ widgets: widgets });
+          writeJSON({ widgets: widgets });
           return widgets[i].active;
         }
       }
@@ -27,7 +22,7 @@
       for(var i = 0; i < widgets.length; i++) {
         if (widgets[i].name === widgetName) {
           widgets[i].location = location;
-          this.writeJSON({ widgets: widgets });
+          writeJSON({ widgets: widgets });
           return widgets[i].location;
         }
       }
