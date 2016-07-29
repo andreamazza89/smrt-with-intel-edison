@@ -8,20 +8,11 @@
   };
 
   function fetchCurrentDateTime() {
-    var currentDateTime = {};
+    var currentDateTime = new Date();
     var timeZone = $("#clock-widget .inner").data('timezone');
-    var currentTime = new Date();
-    currentTime.setTime(currentTime.getTime() + (HOUR * timezones[timeZone]));
+    var timeZonedDateTime = new Date(currentDateTime.setTime(currentDateTime.getTime() + (HOUR * timezones[timeZone])));
 
-    currentDateTime.hours   = currentTime.getHours();
-    currentDateTime.minutes = currentTime.getMinutes();
-    currentDateTime.seconds = currentTime.getSeconds();
-
-    currentDateTime.year    = currentTime.getFullYear();
-    currentDateTime.month   = currentTime.getMonth() + 1;
-    currentDateTime.day     = currentTime.getDate();
-
-    return currentDateTime;
+    return timeZonedDateTime;
   }
 
   exports.fetchCurrentDateTime = fetchCurrentDateTime;

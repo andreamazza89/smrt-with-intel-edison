@@ -1,17 +1,17 @@
 (function(exports){
 
   function displayDateTime(dateTime) {
-    var hours   = twoDigitsZeroPadding(dateTime.hours);
-    var minutes = twoDigitsZeroPadding(dateTime.minutes);
-    var seconds = twoDigitsZeroPadding(dateTime.seconds);
+    var hours   = twoDigitsZeroPadding(dateTime.getHours());
+    var minutes = twoDigitsZeroPadding(dateTime.getMinutes());
+    var seconds = twoDigitsZeroPadding(dateTime.getSeconds());
 
-    var year  = dateTime.year.toString();
-    var month = dateTime.month.toString();
-    var day   = dateTime.day.toString();
+    var year  = dateTime.getFullYear();
+    var month = dateTime.getMonth() + 1;
+    var day   = dateTime.getDate();
 
     var timeZone = $("#clock-widget .inner").data('timezone');
     var time = hours + ':' + minutes + ':' + seconds;
-    var date = day + '-' + month + '-' + year;
+    var date = day.toString() + '-' + month.toString() + '-' + year.toString();
 
     $("#clock-widget #location").html(timeZone);
     $("#clock-widget #time").html(time);
