@@ -1,8 +1,7 @@
 {% extends './layout.njk' %}
 
 {% block styles %}
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/button-styles.css">
+  <link rel="stylesheet" href="css/control-panel.css">
   <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
 {% endblock %}
 
@@ -20,7 +19,8 @@
         <div id="widget-box-{{ widget.name }}"
         class="widget-box widget-box-{{ widget.name }}"
         data-location-row="{{ widget.location.row }}"
-        data-location-column="{{ widget.location.column }}" data-location-height="{{ widget.location.height }}"
+        data-location-column="{{ widget.location.column }}"
+        data-location-height="{{ widget.location.height }}"
         data-location-width="{{ widget.location.width }}"
         data-name="{{ widget.name }}">
           {{ widget.name }}
@@ -32,7 +32,7 @@
   <div id="widget-list-container">
   <ul>
     {% for widget in widgetData %}
-      <li>
+      <li class="{{ widget.name }}-list-item">
         <div class="widget-name" id="widget-name-{{ widget.name }}">{{ widget.name }}</div>
         <button class="widget-check" id="widget-check-{{ widget.name }}" data-name="{{ widget.name }}"> </button>
         <button class="widget-settings" id="widget-settings-{{ widget.name }}"></button>

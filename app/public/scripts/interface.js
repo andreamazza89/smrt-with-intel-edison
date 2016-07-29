@@ -14,8 +14,8 @@ $(document).ready(function(){
   getJSON(setListStyles);
 
   $('.widget-check').click(function(event) {
-    var widgetName = $(this).attr('id').match(/\w+$/)[0];
-    toggleStyles(widgetName);
+    var widgetName = $(this).data('name');
+    toggleStyles(this);
     getJSON(wjson.toggleActive, widgetName);
     setDragBox(widgetName);
   });
@@ -42,10 +42,6 @@ $(document).ready(function(){
               height: 1,
               width: 1 };
   };
-
-  // var setWidgetPosition = function(){
-  //
-  // };
 
   $('.widget-box').each(function(){
     $(this).draggable({ snap: ".grid-box", snapMode: "inner", snapTolerance: 103, containment: "#grid-container", cursor: "pointer" });
