@@ -1,4 +1,4 @@
-/node_modules
+node_modules
 npm-debug.log
-/errorShots
-/public/css/main.css
+errorShots
+public/css/main.css
