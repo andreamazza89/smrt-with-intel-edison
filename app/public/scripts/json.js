@@ -1,10 +1,10 @@
-var getJSON = function(callback, widgetName) {
+var getJSON = function(callback, widgetName, location) {
   $.ajax({
     url: "/api/widgets",
     dataType: 'json',
     type: 'GET',
     success: function(data) {
-      callback(data, widgetName);
+      callback(data, widgetName, location);
     }.bind(this),
     error: function(xhr, status, err) {
       console.log(err.toString());

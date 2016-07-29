@@ -3,9 +3,9 @@
   function widgetJSON(sjson){
 
     if (sjson === undefined){
-      this.jsonMethod = setJSON;
+      this.writeJSON = setJSON;
     } else {
-      this.jsonMethod = sjson;
+      this.writeJSON = sjson;
     }
 
   }
@@ -16,8 +16,19 @@
       for(var i = 0; i < widgets.length; i++) {
         if (widgets[i].name === widgetName) {
           widgets[i].active = widgets[i].active === "true" ? "false" : "true";
-          this.jsonMethod({ widgets: widgets });
+          this.writeJSON({ widgets: widgets });
           return widgets[i].active;
+        }
+      }
+    },
+
+    setGridPosition: function(data, widgetName, location)  {
+      var widgets = JSON.parse(data).widgets;
+      for(var i = 0; i < widgets.length; i++) {
+        if (widgets[i].name === widgetName) {
+          widgets[i].location = location;
+          this.writeJSON({ widgets: widgets });
+          return widgets[i].location;
         }
       }
     }
