@@ -32,7 +32,7 @@
   <div id="widget-list-container">
   <ul>
     {% for widget in widgetData %}
-      <li class="{{ widget.name }}-list-item">
+      <li class="{{ widget.name }}-list-item {% if widget.active %}active{% endif %}">
         <div class="widget-name" id="widget-name-{{ widget.name }}">{{ widget.name }}</div>
         <button class="widget-check" id="widget-check-{{ widget.name }}" data-name="{{ widget.name }}"> </button>
         <button class="widget-settings" id="widget-settings-{{ widget.name }}"></button>
@@ -46,5 +46,4 @@
 {% block scripts %}
   <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
   <script src="scripts/bundle.js"></script>
-  <script src="scripts/styling.js"></script>
 {% endblock %}
