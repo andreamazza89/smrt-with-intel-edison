@@ -8,5 +8,13 @@
    "name": "weather",
    "location": {"row": 1, "column": 1, "width": 2, "height": 1 },
    "active": true
+  },
+  {
+   "name": "time",
+   "location": {"row": 2, "column": 2, "width": 1, "height": 1 },
+   "settings": {
+      "timezone": "london"
+    },
+   "active": true
   }
 ]}
