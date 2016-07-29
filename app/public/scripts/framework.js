@@ -19,6 +19,7 @@
 
     setGridPosition: function(data, widgetName, location)  {
       var widgets = JSON.parse(data).widgets;
+      console.log(widgetName);
       for(var i = 0; i < widgets.length; i++) {
         if (widgets[i].name === widgetName) {
           widgets[i].location = location;

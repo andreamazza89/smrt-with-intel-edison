@@ -38,28 +38,28 @@
 
 .weather-list-item.active {
   .widget-name {
-    background-color: #2ecc71;
+    background-color: $green;
   }
   .widget-check {
-    background-color: #27ae60;
+    background-color: darken($green, 10%);
   }
 }
 
 .tfl-list-item.active {
   .widget-name {
-    background-color: #3498db;
+    background-color: $blue;
   }
   .widget-check {
-    background-color: #2980b9;
+    background-color: darken($blue, 10%);
   }
 }
 
 .clock-list-item.active {
   .widget-name {
-    background-color: #9b59b6;
+    background-color: $fuschia;
   }
   .widget-check {
-    background-color: #8e44ad;
+    background-color: darken($fuschia, 10%);;
   }
 }
 //

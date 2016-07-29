@@ -33,7 +33,7 @@ $(document).ready(function(){
     if($(element).parent().hasClass('active')) {
       $("#grid-container").append("<div id='widget-box-"+widgetName+
         "' class='widget-box widget-box-"+widgetName+
-        "' >"+widgetName+"</div>");
+        "' data-name='"+widgetName+"'>"+widgetName+"</div>");
       $("#widget-box-"+widgetName).draggable(draggableConfig);
     } else {
       $("#widget-box-"+widgetName).remove();
