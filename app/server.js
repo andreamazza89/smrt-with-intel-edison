@@ -29,6 +29,16 @@ app.use(express.static('./app/public'));
 app.get('/bundle.js', browserify('./app/widgets/main.js'));
 app.get('/scripts/bundle.js', browserify('./app/public/scripts/interface.js'));
 
+app.get('/', function(req, res){
+  fs.readFile(__dirname + (process.env.widget_path || '/widgets') +  '.json', function(err, data) {
+    if (err) {
+      console.error(err);
+      process.exit(1);
+    }
+    res.render('control-panel', { widgetData: JSON.parse(data).widgets });
+  });
+});
+
 app.get('/mirror', function(req, res){
   fs.readFile(__dirname + (process.env.widget_path || '/widgets') +  '.json', function(err, data) {
     if (err) {

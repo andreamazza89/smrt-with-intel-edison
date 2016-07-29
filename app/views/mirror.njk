@@ -1,7 +1,10 @@
 {% extends './layout.njk' %}
 
+{% block styles %}
+  <link rel="stylesheet" href="/css/main.css" charset="utf-8">
+{% endblock %}
+
 {% block mainContent %}
-<div class="main-content">
   {% for widget in widgetData %}
     {% if widget.active %}
       {% set rowClass = 'row-' + widget.location.row %}
@@ -14,5 +17,8 @@
       </div>
     {% endif %}
   {% endfor %}
-</div>
+{% endblock %}
+
+{% block scripts %}
+  <script src="/bundle.js"type="text/javascript"></script>
 {% endblock %}
