@@ -42,4 +42,8 @@ $(document).ready(function(){
               width: 1 };
   };
 
+  var setWidgetPosition = function(){
+
+  };
+
 });

@@ -14,7 +14,12 @@
     {% for i in range(0,9) %}
       <div class="grid-box"></div>
     {% endfor %}
-    <div id="widget-box-tfl" class="widget-box widget-box-tfl ui-draggable ui-draggable-handle">tfl</div>
+
+    {% for widget in widgetData %}
+      {% if widget.active %}
+        <div id="widget-box-{{ widget.name }}" class="widget-box widget-box-{{ widget.name }}" >{{ widget.name }}</div>
+      {% endif %}
+    {% endfor %}
   </div>
 
   <div id="widget-list-container">
@@ -26,7 +31,6 @@
         <button class="widget-settings" id="widget-settings-{{ widget.name }}"></button>
       </li>
     {% endfor %}
-
   </ul>
   </div>
 

@@ -10,7 +10,7 @@
       var widgets = JSON.parse(data).widgets;
       for(var i = 0; i < widgets.length; i++) {
         if (widgets[i].name === widgetName) {
-          widgets[i].active = widgets[i].active === "true" ? "false" : "true";
+          widgets[i].active = widgets[i].active ? false : true;
           writeJSON({ widgets: widgets });
           return widgets[i].active;
         }

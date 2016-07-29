@@ -3,7 +3,7 @@
     var widgets = JSON.parse(data).widgets;
     for (var i = 0; i < widgets.length; i++) {
       var name = widgets[i].name;
-      if(widgets[i].active === "true") {
+      if(widgets[i].active) {
         $("#widget-name-"+name).attr('class', 'widget-name-' + name +'-active');
         $("#widget-check-"+name).attr('class', 'widget-check-' + name +'-active');
       }
