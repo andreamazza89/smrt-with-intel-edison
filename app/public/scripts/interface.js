@@ -16,8 +16,8 @@ $(document).ready(function(){
     if($('#widget-check-'+widgetName).attr('class') === 'widget-check'){
       $("#widget-box-"+widgetName).remove();
     } else {
-      $("#widget-container").append("<div id='widget-box-"+widgetName+"' class='widget-box-"+widgetName+"' >"+widgetName+"</div>");
-      $("#widget-box-"+widgetName).draggable({ snap: ".grid-box", snapMode: "inner", snapTolerance: 103, cursor: "pointer" }).css("position", "absolute");
+      $("#grid-container").append("<div id='widget-box-"+widgetName+"' class='widget-box widget-box-"+widgetName+"' >"+widgetName+"</div>");
+      $("#widget-box-"+widgetName).draggable({ snap: ".grid-box", snapMode: "inner", snapTolerance: 103, containment: "#grid-container", cursor: "pointer" });
     }
   };
 

@@ -19,7 +19,7 @@ app.get('/mirror', function(req, res){
 var WIDGETS_FILE = path.join(__dirname, 'widgets.json');
 
 app.get('/api/widgets', function(req, res) {
-  fs.readFile(WIDGETS_FILE, function(err, data) {
+  fs.readFile(__dirname + (process.env.widget_path || '/widgets') +  '.json', function(err, data) {
     if (err) {
       console.error(err);
       process.exit(1);
@@ -27,7 +27,6 @@ app.get('/api/widgets', function(req, res) {
     res.json(data.toString('utf8'));
   });
 });
-
 
 app.post('/api/widgets', function(req, res) {
   var widgets = req.body;
