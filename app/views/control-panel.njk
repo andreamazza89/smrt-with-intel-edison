@@ -17,7 +17,13 @@
 
     {% for widget in widgetData %}
       {% if widget.active %}
-        <div id="widget-box-{{ widget.name }}" class="widget-box widget-box-{{ widget.name }}" >{{ widget.name }}</div>
+        <div id="widget-box-{{ widget.name }}"
+        class="widget-box widget-box-{{ widget.name }}"
+        data-location-row="{{ widget.location.row }}"
+        data-location-column="{{ widget.location.column }}" data-location-height="{{ widget.location.height }}"
+        data-location-width="{{ widget.location.width }}">
+          {{ widget.name }}
+        </div>
       {% endif %}
     {% endfor %}
   </div>

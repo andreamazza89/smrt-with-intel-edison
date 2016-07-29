@@ -4,7 +4,8 @@ var widgetJSON = require('./framework').widgetJSON;
 var toggleStyles = require('./styling').toggleStyles;
 var setListStyles = require('./styling').setListStyles;
 
-var positionKey = { 0: 0, 205: 1, 410: 2};
+var positionKey = { 0: 0, 205: 1, 410: 2 };
+var positionKey2 = { 0: 0, 1: 205, 2: 410 };
 
 $(document).ready(function(){
 
@@ -34,7 +35,7 @@ $(document).ready(function(){
     }
   };
 
-  var getGridPosition = function(location) {
+  var gridPosition = function(location) {
     //defaulting to width/height of 1 for now
     return {  row: positionKey[location.top],
               column: positionKey[location.left],
@@ -42,8 +43,25 @@ $(document).ready(function(){
               width: 1 };
   };
 
-  var setWidgetPosition = function(){
+  // var setWidgetPosition = function(){
+  //
+  // };
 
-  };
+  $('.widget-box').each(function(){
+    $(this).draggable({ snap: ".grid-box", snapMode: "inner", snapTolerance: 103, containment: "#grid-container", cursor: "pointer" });
+
+    var location = {
+      row: $(this).data('location-row'),
+      column: $(this).data('location-column'),
+      height: $(this).data('location-height'),
+      width: $(this).data('location-width')
+    };
+
+    $(this).css({
+      top: positionKey2[location.row] + 'px',
+      left: positionKey2[location.column] + 'px'
+    });
+
+  });
 
 });

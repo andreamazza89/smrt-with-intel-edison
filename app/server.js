@@ -8,6 +8,7 @@ var nunjucks = require('nunjucks');
 var fs = require('fs');
 var sass = require('node-sass-middleware');
 
+var WIDGETS_FILE = __dirname + (process.env.widget_path || '/widgets') +  '.json';
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -30,7 +31,7 @@ app.get('/bundle.js', browserify('./app/widgets/main.js'));
 app.get('/scripts/bundle.js', browserify('./app/public/scripts/interface.js'));
 
 app.get('/', function(req, res){
-  fs.readFile(__dirname + (process.env.widget_path || '/widgets') +  '.json', function(err, data) {
+  fs.readFile(WIDGETS_FILE, function(err, data) {
     if (err) {
       console.error(err);
       process.exit(1);
@@ -40,7 +41,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/mirror', function(req, res){
-  fs.readFile(__dirname + (process.env.widget_path || '/widgets') +  '.json', function(err, data) {
+  fs.readFile(WIDGETS_FILE, function(err, data) {
     if (err) {
       console.error(err);
       process.exit(1);
@@ -49,10 +50,9 @@ app.get('/mirror', function(req, res){
   });
 });
 
-var WIDGETS_FILE = path.join(__dirname, 'widgets.json');
 
 app.get('/api/widgets', function(req, res) {
-  fs.readFile(__dirname + (process.env.widget_path || '/widgets') +  '.json', function(err, data) {
+  fs.readFile(WIDGETS_FILE, function(err, data) {
     if (err) {
       console.error(err);
       process.exit(1);
