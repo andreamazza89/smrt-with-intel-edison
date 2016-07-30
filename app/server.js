@@ -7,7 +7,6 @@ var app = express();
 var nunjucks = require('nunjucks');
 var sass = require('node-sass-middleware');
 var browserSync = require('browser-sync').create();
-var proxy = require('http-proxy-middleware');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -73,11 +72,7 @@ app.post('/api/widgets', function(req, res) {
 });
 
 browserSync.init({
-  server: {
-    baseDir: './',
-    port: 3001,
-    middleware: proxy('/', { target: 'http://localhost:3000' })
-  },
+  proxy: 'localhost:3000',
   files: ['./app/widgets.json'],
   startPath: '/mirror'
 });
