@@ -14,18 +14,27 @@ var draggableConfig = { snap: ".grid-box",
 $(document).ready(function(){
 
   var wjson = new widgetJSON(setJSON);
+  var activeWidget = false;
 
-  $('.widget-check').click(function(event) {
+  $('.widget-check').click(function() {
     var widgetName = $(this).data('name');
     $(this).parent().toggleClass('active');
     getJSON(wjson.toggleActive, widgetName);
     setDragBox(this);
   });
 
-  $('body').on('mouseup', '.widget-box', function(event){
-    var widgetName = $(this).data('name');
-    var location = gridPosition($(this).position());
-    getJSON(wjson.setGridPosition, widgetName, location);
+  $('body').on('mousedown', '.widget-box', function(event){
+    activeWidget = $(this);
+    console.log(activeWidget.data('name'));
+  });
+
+  $(document).mouseup(function(){
+    if (activeWidget) {
+      var widgetName = activeWidget.data('name');
+      var location = gridPosition(activeWidget.position());
+      getJSON(wjson.setGridPosition, widgetName, location);
+      activeWidget = false;
+    }
   });
 
   var setDragBox = function(element)  {
