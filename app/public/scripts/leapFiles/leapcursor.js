@@ -18,7 +18,7 @@ LeapCursor.prototype = {
 	height				: 110,
 
 	top					: null,
-	left				: null,
+	left				: -5000,
 
 	defaultHandPosition	: false,
 

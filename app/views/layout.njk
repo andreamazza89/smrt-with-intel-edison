@@ -5,10 +5,11 @@
     {% block styles %}
     {% endblock %}
   </head>
-  <body>
+  <body id='body'>
     <div class="main-content">
     {% block mainContent %}
     {% endblock %}
+
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
@@ -18,9 +19,9 @@
     <script src="scripts/leapFiles/detector.min.js"></script>
     <script src="scripts/leapFiles/leapcursor.js"></script>
 
-    <script src="scripts/leapFiles/leapConsole.js"></script>
 
-    <button type="submit" onClick="leap()">LEAP CONSOLE</button>
+    <script src="scripts/mirrorInterface.js"></script>
+
 
 
     {% block scripts %}

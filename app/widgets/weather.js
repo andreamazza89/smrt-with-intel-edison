@@ -50,7 +50,7 @@ var weatherType = {
     $.ajax({
 	    url: api,
 	    success: function(data) {
-        console.log('hello2');
+        console.log('weather_log');
 	    	this.printWeather(data.SiteRep);
 	    },
 	    printWeather: function(data) {
