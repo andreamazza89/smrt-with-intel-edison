@@ -6,12 +6,12 @@
                 "location": "London"
             },
             "location": {
-                "row": 2,
-                "column": 1,
+                "row": 0,
+                "column": 0,
                 "height": 1,
                 "width": 1
             },
-            "active": false
+            "active": true
         },
         {
             "name": "tfl",
@@ -24,11 +24,11 @@
             },
             "location": {
                 "row": 1,
-                "column": 2,
+                "column": 1,
                 "height": 1,
                 "width": 1
             },
-            "active": false
+            "active": true
         },
         {
             "name": "clock",
@@ -37,8 +37,8 @@
                 "timezone": "london"
             },
             "location": {
-                "row": 1,
-                "column": 0,
+                "row": 2,
+                "column": 2,
                 "height": 1,
                 "width": 1
             },
