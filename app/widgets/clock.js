@@ -44,6 +44,9 @@
     }, 1000);
   }
 
+  //ANIMATED SMOOTH CLOCK BELOW ************************************************
+  //****************************************************************************
+
     /// Simple smooth clock by Ken Fyrstenberg Nilsen
   /// License CC3.0-Attribute
 
@@ -60,7 +63,7 @@
 
   /// start
   (function loop() {
-    renderClock()
+    renderClock();
     requestAnimationFrame(loop);
   })();
 
@@ -121,14 +124,14 @@
       h: ha,
       m: ma,
       s: sa
-    }
+    };
   }
 
   function lineToAngle(x, y, length, angle) {
     return {
       x: x + length * Math.cos(angle),
       y: y + length * Math.sin(angle)
-    }
+    };
   }
 
   exports.init = init;

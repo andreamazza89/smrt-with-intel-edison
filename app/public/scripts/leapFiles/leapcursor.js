@@ -23,7 +23,7 @@ LeapCursor.prototype = {
 	defaultHandPosition	: false,
 
 	gestureColor		: '#88CFEB',
-	color				: '#000000',
+	color				: 'white',
 
 	yOffset 			: -160,
 
