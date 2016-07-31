@@ -5,9 +5,8 @@ var browserify = require('browserify-middleware');
 var express = require('express');
 var app = express();
 var nunjucks = require('nunjucks');
-var fs = require('fs');
 var sass = require('node-sass-middleware');
-
+var browserSync = require('browser-sync').create();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -72,6 +71,11 @@ app.post('/api/widgets', function(req, res) {
   });
 });
 
+browserSync.init({
+  proxy: 'localhost:3000',
+  files: ['./app/widgets.json'],
+  startPath: '/mirror'
+});
 
 app.listen(3000, function(){
   console.log('listening at http://localhost:3000');
