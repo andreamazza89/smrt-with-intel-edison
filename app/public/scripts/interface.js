@@ -15,6 +15,7 @@ $(document).ready(function(){
 
   var wjson = new widgetJSON(setJSON);
   var activeWidget = false;
+  var activeLocation;
 
   $('.widget-check').click(function() {
     var widgetName = $(this).data('name');
@@ -26,15 +27,19 @@ $(document).ready(function(){
 
   $('body').on('mousedown', '.widget-box', function(event){
     activeWidget = $(this);
-    console.log(activeWidget.data('name'));
+    activeLocation = $(this).position();
   });
 
   $(document).mouseup(function(){
-    if (activeWidget) {
+    if (activeWidget && spaceFree(activeWidget)) {
       var widgetName = activeWidget.data('name');
       var location = gridPosition(activeWidget.position());
       getJSON(wjson.setGridPosition, widgetName, location);
       activeWidget = false;
+    }
+    else if (activeWidget) {
+      activeWidget.css('top', activeLocation.top);
+      activeWidget.css('left', activeLocation.left);
     }
   });
 
@@ -77,6 +82,18 @@ $(document).ready(function(){
         }
       }
     }
+  };
+
+  var spaceFree = function(widget)  {
+    var canMove = true;
+    $('.widget-box').each(function(){
+      if(($(this).data('name') !== widget.data('name')) &&
+         (widget.position().top === $(this).position().top) &&
+         (widget.position().left === $(this).position().left)) {
+        canMove = false;
+      }
+    });
+    return canMove;
   };
 
   $('.widget-box').each(function(){
