@@ -55,7 +55,8 @@ $(document).ready(function(){
 
   for (var i = 0; i < widgets.length; i++) {
     bind(widgets[i], 'mouseenter', 	function() { // jshint ignore:line
-      this.style.border = '#E3F5DC';
+      this.style.background = '#171717';
+      this.style.transition = '0.5s';
       var div = $(this);
       div.stop(true, true).animate({
           margin: -10,
@@ -66,6 +67,7 @@ $(document).ready(function(){
 
     bind(widgets[i], 'mouseleave', 	function() { // jshint ignore:line
       this.style.background = 'none';
+      this.style.transition = '0.5s';
       var div = $(this);
       div.stop(true, true).animate({
           margin: 0,
