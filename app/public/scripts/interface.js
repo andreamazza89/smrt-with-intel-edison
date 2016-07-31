@@ -19,8 +19,9 @@ $(document).ready(function(){
   $('.widget-check').click(function() {
     var widgetName = $(this).data('name');
     $(this).parent().toggleClass('active');
-    getJSON(wjson.toggleActive, widgetName);
-    setDragBox(this);
+    gridLocation = getFreeLocation();
+    getJSON(wjson.toggleActive, widgetName, gridLocation);
+    setDragBox(this, gridLocation);
   });
 
   $('body').on('mousedown', '.widget-box', function(event){
@@ -37,11 +38,13 @@ $(document).ready(function(){
     }
   });
 
-  var setDragBox = function(element)  {
+  var setDragBox = function(element, location)  {
     var widgetName = $(element).data('name');
     if($(element).parent().hasClass('active')) {
       $("#grid-container").append("<div id='widget-box-"+widgetName+
         "' class='widget-box widget-box-"+widgetName+
+        "' style='top:"+positionKey2[location.row]+"px; "+
+        " left:"+positionKey2[location.column]+"px"+
         "' data-name='"+widgetName+"'>"+widgetName+"</div>");
       $("#widget-box-"+widgetName).draggable(draggableConfig);
     } else {
@@ -55,6 +58,25 @@ $(document).ready(function(){
               column: positionKey[location.left],
               height: 1,
               width: 1 };
+  };
+
+  var getFreeLocation = function()  {
+    var positions = { 0: [], 1: [], 2:[] };
+    $('.widget-box').each(function(){
+      positions[positionKey[$(this).position().top]].push(positionKey[$(this).position().left]);
+    });
+    for(var i = 0; i < 3; i++) {
+      for(var j = 0; j < 3; j++) {
+        if(!positions[i].includes(j)) {
+          return {
+            row: i,
+            column: j,
+            height: 1,
+            width: 1
+          };
+        }
+      }
+    }
   };
 
   $('.widget-box').each(function(){

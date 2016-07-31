@@ -6,11 +6,12 @@
   }
 
   widgetJSON.prototype = {
-    toggleActive: function(data, widgetName) {
+    toggleActive: function(data, widgetName, location) {
       var widgets = JSON.parse(data).widgets;
       for(var i = 0; i < widgets.length; i++) {
         if (widgets[i].name === widgetName) {
           widgets[i].active = widgets[i].active ? false : true;
+          widgets[i].location = location;
           writeJSON({ widgets: widgets });
           return widgets[i].active;
         }
