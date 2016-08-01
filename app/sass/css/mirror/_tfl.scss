@@ -1,4 +1,12 @@
 .tube {
+  &-title {
+    line-height: 2;
+    border-radius: 2px;
+    padding: 2px 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+  }
+
   &-bakerloo {
     background-color: $bakerloo;
   }
