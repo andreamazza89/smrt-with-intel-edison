@@ -11,8 +11,9 @@ var lastGestureTime = Date.now();
 $(document).ready(function(){
   var controller  = new Leap.Controller({enableGestures: true});
   controller.on('deviceFrame', function(frame) {
-    for(var i = 0; i < frame.gestures.length; i++){
-      var gesture = frame.gestures[i];
+
+    if (frame.gestures.length > 0) {
+      var gesture = frame.gestures[0];
       var type = gesture.type;
 
       switch(type){
@@ -27,7 +28,7 @@ $(document).ready(function(){
           }
           break;
 
-          case "screenTap":
+        case "screenTap":
           if (gesture.state == "stop") {}
           break;
         }
