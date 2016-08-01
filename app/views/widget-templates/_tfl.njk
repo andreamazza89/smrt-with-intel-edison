@@ -1,1 +1,14 @@
-
+<ul>
+  {% for line, enabled in widget.settings %}
+  {# {{ line }}
+  {{ enabled }}
+  {{ widget.settings[line] }} #}
+  {% if enabled %}
+    <li class="flex-container">
+      <span class="tube-status" data-line="{{ line }}">Good service</span>
+       on the
+      <span class="tube-title tube-{{ line }}">{{ line }} line</span>
+    </li>
+    {% endif %}
+  {% endfor %}
+<ul>
