@@ -27,16 +27,27 @@
   background-position: 0px -40px;
 }
 
-.widget-settings {
+.widget-settings-button {
   width: 40px;
   height: 40px;
-  background-color: #394a5c;
+  background-color: $blue-grey;
   color: #fff;
   float: left;
   border: 0px;
   cursor: pointer;
   outline: none;
   background-image: url(/images/settings.png);
+}
+
+.widget-settings {
+  width: 280px;
+  height: 0px;
+  float: left;
+  background-color: $blue-grey;
+  transition: all 0.3s;
+}
+.widget-settings.active {
+  height: 100px;
 }
 
 li.active {

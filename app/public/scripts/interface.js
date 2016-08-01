@@ -24,6 +24,12 @@ $(document).ready(function(){
     setDragBox(this, gridLocation);
   });
 
+  $('.widget-settings-button').click(function() {
+    var widgetName = $(this).data('name');
+    console.log(widgetName);
+    $('#widget-settings-'+widgetName).toggleClass('active');
+  });
+
   $('body').on('mousedown', '.widget-box', function(event){
     activeWidget = $(this);
     activeLocation = $(this).position();

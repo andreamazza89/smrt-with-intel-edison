@@ -18,11 +18,12 @@ ul  {
 }
 
 li  {
-  height: 40px;
   width: 280px;
+  min-height: 40px;
   margin: 0 0 15px 0;
   padding: 0;
   list-style: none;
+  float: left;
 }
 
 .main-content {
