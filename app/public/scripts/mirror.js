@@ -1,0 +1,56 @@
+var weather = require('./widgets/weather');
+var travel = require('./widgets/travel');
+var clock = require('./widgets/clock');
+
+weather.init();
+travel.init();
+clock.init();
+
+var lastGestureTime = Date.now();
+
+$(document).ready(function(){
+  var controller  = new Leap.Controller({enableGestures: true});
+  controller.on('deviceFrame', function(frame) {
+    for(var i = 0; i < frame.gestures.length; i++){
+      var gesture = frame.gestures[i];
+      var type = gesture.type;
+
+      switch(type){
+        case "swipe":
+          if (gesture.state == "stop") {}
+          break;
+
+        case "keyTap":
+          if (gesture.state == "stop" && Date.now() >= lastGestureTime + 500) {
+            $('.main-content').toggleClass('hidden');
+            lastGestureTime = Date.now();
+          }
+          break;
+
+          case "screenTap":
+          if (gesture.state == "stop") {}
+          break;
+        }
+      }
+  });
+
+  controller.connect();
+
+  function bind(elm, evt, f) {
+    if (elm.addEventListener) {
+      elm.addEventListener(evt, f, false);
+    } else if (elm.attachEvent) {
+      elm.attachEvent('on' + evt, f);
+    }
+  }
+
+  $('.mirror-widget').each(function(){
+    bind(this, 'mouseenter', function(){
+      $(this).addClass('active');
+    });
+
+    bind(this, 'mouseleave', function(){
+      $(this).removeClass('active');
+    });
+  });
+});
