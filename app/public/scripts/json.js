@@ -18,8 +18,9 @@
     $.ajax({
       url: "/api/widgets",
       dataType: 'json',
+      contentType: 'application/json',
       type: 'POST',
-      data: data,
+      data: JSON.stringify(data),
       success: function(data) {
       }.bind(this),
       error: function(xhr, status, err) {
