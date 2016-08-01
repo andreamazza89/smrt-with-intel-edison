@@ -23,8 +23,8 @@
                 ]
             },
             "location": {
-                "row": 2,
-                "column": 2,
+                "row": 0,
+                "column": 0,
                 "height": 1,
                 "width": 1
             },
@@ -38,7 +38,7 @@
             },
             "location": {
                 "row": 0,
-                "column": 0,
+                "column": 2,
                 "height": 1,
                 "width": 1
             },
