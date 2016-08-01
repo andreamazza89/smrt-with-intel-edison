@@ -27,7 +27,19 @@
           return widgets[i].location;
         }
       }
+    },
+
+    changeSetting: function(data, widgetName, setting)  {
+      var widgets = JSON.parse(data).widgets;
+      for(var i = 0; i < widgets.length; i++) {
+        if (widgets[i].name === widgetName) {
+          widgets[i].settings[setting[0]] = setting[1];
+          writeJSON({ widgets: widgets });
+          return widgets[i].settings;
+        }
+      }
     }
+
 
   };
 

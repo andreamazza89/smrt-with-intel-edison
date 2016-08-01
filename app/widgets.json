@@ -3,7 +3,8 @@
         {
             "name": "weather",
             "settings": {
-                "location": "London"
+                "location": "Dublin",
+                "unit": "celsius"
             },
             "location": {
                 "row": 0,
@@ -23,8 +24,8 @@
                 ]
             },
             "location": {
-                "row": 0,
-                "column": 1,
+                "row": 1,
+                "column": 2,
                 "height": 1,
                 "width": 1
             },
@@ -33,12 +34,12 @@
         {
             "name": "clock",
             "settings": {
-                "format": "24",
-                "timezone": "london"
+                "format": "12",
+                "location": "Madrid"
             },
             "location": {
                 "row": 0,
-                "column": 2,
+                "column": 1,
                 "height": 1,
                 "width": 1
             },

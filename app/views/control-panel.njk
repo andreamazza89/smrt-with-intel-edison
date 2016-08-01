@@ -36,7 +36,9 @@
         <div class="widget-name" id="widget-name-{{ widget.name }}">{{ widget.name }}</div>
         <button class="widget-check" id="widget-check-{{ widget.name }}" data-name="{{ widget.name }}"> </button>
         <button class="widget-settings-button" id="widget-settings-button-{{ widget.name }}" data-name="{{ widget.name }}"></button>
-        <div class="widget-settings" id="widget-settings-{{ widget.name }}" data-name="{{ widget.name }}"></div>
+        <div class="widget-settings" id="widget-settings-{{ widget.name }}" data-name="{{ widget.name }}">
+          {% include './settings-templates/_' + widget.name + '.njk' %}
+        </div>
       </li>
     {% endfor %}
   </ul>

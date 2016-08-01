@@ -44,10 +44,27 @@
   height: 0px;
   float: left;
   background-color: $blue-grey;
+  color: white;
+  font-weight: lighter;
+  line-height: 130%;
   transition: all 0.3s;
+  overflow: hidden;
 }
+
 .widget-settings.active {
   height: 100px;
+}
+
+.widget-settings form {
+  padding: 10px;
+}
+
+label {
+    display: block;
+}
+
+label {
+    margin-bottom: 8px;
 }
 
 li.active {
