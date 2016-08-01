@@ -11,27 +11,31 @@ var lastGestureTime = Date.now();
 $(document).ready(function(){
   var controller  = new Leap.Controller({enableGestures: true});
   controller.on('deviceFrame', function(frame) {
-    var gesture = frame.gestures[0];
-    var type = gesture.type;
 
-    switch(type){
-      case "swipe":
-        if (gesture.state == "stop") {
-          $('#audio-player').trigger('pause');
-          radioIsNotLoaded = true;
-        }
-        break;
 
-      case "keyTap":
-        if (gesture.state == "stop" && Date.now() >= lastGestureTime + 500) {
-          $('.main-content').toggleClass('hidden');
-          lastGestureTime = Date.now();
-        }
-        break;
+    if (frame.gestures.length > 0) {
+      var gesture = frame.gestures[0];
+      var type = gesture.type;
+
+      switch(type){
+        case "swipe":
+          if (gesture.state == "stop") {
+            $('#audio-player').trigger('pause');
+            radioIsNotLoaded = true;
+          }
+          break;
+
+        case "keyTap":
+          if (gesture.state == "stop" && Date.now() >= lastGestureTime + 500) {
+            $('.main-content').toggleClass('hidden');
+            lastGestureTime = Date.now();
+          }
+          break;
 
         case "screenTap":
-        if (gesture.state == "stop") {}
-        break;
+          if (gesture.state == "stop") {}
+          break;
+      }
     }
   });
 

@@ -10,8 +10,7 @@
 
   function checkRadio(dateTime) {
 
-    var currentTimeHoursSeconds = (dateTime.getHours().toString() + dateTime.getMinutes().toString())  ;
-
+    var currentTimeHoursSeconds = (dateTime.getHours().toString() + dateTime.getMinutes().toString());
     var isRadioEnabled = $("#clock-widget .inner").data('radio-enabled');
     var triggerTime = $("#clock-widget .inner").data('radio-trigger-time');
     var timeOut = $("#clock-widget .inner").data('radio-timeout');

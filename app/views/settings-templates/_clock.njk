@@ -1,0 +1,13 @@
+<div>
+  <form action="">
+  <label>
+    Location: <input type="text" name="location" data-name="{{ widget.name }}" value="{{ widget.settings.location }}">
+  </label>
+  <label>
+    <input type="radio" name="format" value="12" data-name="{{ widget.name }}" {% if widget.settings.format == "12" %}checked="checked"{% endif %}> 12 Hour
+  </label>
+  <label>
+    <input type="radio" name="format" value="24" data-name="{{ widget.name }}" {% if widget.settings.format == "24" %}checked="checked"{% endif %}> 24 Hour
+  </label>
+  </form>
+</div>

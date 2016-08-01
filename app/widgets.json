@@ -3,11 +3,12 @@
         {
             "name": "weather",
             "settings": {
-                "location": "London"
+                "location": "Barcelona",
+                "unit": "fahrenheit"
             },
             "location": {
-                "row": 2,
-                "column": 1,
+                "row": 0,
+                "column": 0,
                 "height": 1,
                 "width": 1
             },
@@ -16,11 +17,20 @@
         {
             "name": "tfl",
             "settings": {
-                "lines": [
-                    "central",
-                    "jubilee",
-                    "northern"
-                ]
+                "bakerloo": true,
+                "central": false,
+                "circle": true,
+                "district": true,
+                "hammersmith-city": false,
+                "jubilee": true,
+                "metropolitan": true,
+                "northern": false,
+                "piccadilly": false,
+                "victoria": false,
+                "waterloo-city": true,
+                "dlr": true,
+                "tramlink": true,
+                "overground": false
             },
             "location": {
                 "row": 0,
@@ -34,17 +44,16 @@
             "name": "clock",
             "settings": {
                 "format": "24",
-                "timezone": "london",
                 "radio": {
                   "enabled": true,
-                  "triggerTime": "1637",
+                  "triggerTime": "1748",
                   "timeOut": "none",
                   "station": "smooth"
                 }
             },
             "location": {
-                "row": 2,
-                "column": 0,
+                "row": 0,
+                "column": 2,
                 "height": 1,
                 "width": 1
             },
