@@ -1,8 +1,23 @@
 @import "weather-icons";
 
+html, body {
+  background-color: black;
+  cursor: none;
+}
+
+#clockWrapper {
+  position: relative;
+}
+
+#clock {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+
 .main-content > div {
   position: absolute;
-  background-color: lightblue;
+  background-color: none;
 }
 
 .column {
@@ -51,4 +66,8 @@
   &-3 {
     height: 100%;
   }
+}
+
+.inner {
+  position: absolute;
 }

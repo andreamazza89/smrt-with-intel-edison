@@ -1,7 +1,4 @@
-
-
-function leap(){
-
+$(document).ready(function(){
 
   var controller  = new Leap.Controller({enableGestures: true});
 
@@ -10,6 +7,8 @@ function leap(){
     for(var i = 0; i < frame.gestures.length; i++){
       var gesture = frame.gestures[i];
       var type    = gesture.type;
+
+
 
       switch( type ){
 
@@ -33,13 +32,17 @@ function leap(){
 
         case "keyTap":
           if (gesture.state == "stop") {
+          
             console.log('keyTap');
           }
           break;
 
         }
+
+
       }
   });
 
   controller.connect();
-}
+
+});
