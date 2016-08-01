@@ -1,1 +1,9 @@
-
+<ul>
+  {% for line in widget.settings.lines %}
+  <li class="flex-container">
+    <span class="tube-status" data-line="{{ line }}">Good service</span>
+     on the
+    <span class="tube-title tube-{{ line }}">{{ line }} line</span>
+  </li>
+  {% endfor %}
+<ul>
