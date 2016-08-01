@@ -12,7 +12,7 @@
       {% set heightClass = 'height-' + widget.location.height %}
       {% set widthClass = 'width-' + widget.location.width %}
 
-      <div class="{{ rowClass }} {{ columnClass }} {{ heightClass }} {{ widthClass }}" id="{{widget.name}}-widget">
+      <div class="{{ rowClass }} {{ columnClass }} {{ heightClass }} {{ widthClass }} mirror-widget" id="{{widget.name}}-widget">
         {% include './widget-templates/_' + widget.name + '.njk' %}
       </div>
     {% endif %}
@@ -20,5 +20,9 @@
 {% endblock %}
 
 {% block scripts %}
-  <script src="/bundle.js"type="text/javascript"></script>
+  <script src="/scripts/leapFiles/leap.min.js"></script>
+  <script src="/scripts/leapFiles/three.min.js"></script>
+  <script src="/scripts/leapFiles/detector.min.js"></script>
+  <script src="/scripts/leapFiles/leapcursor.js"></script>
+  <script src="/scripts/mirror-bundle.js"type="text/javascript"></script>
 {% endblock %}
