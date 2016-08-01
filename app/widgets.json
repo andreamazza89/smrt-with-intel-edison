@@ -37,9 +37,9 @@
                 "timezone": "london",
                 "radio": {
                   "enabled": true,
-                  "triggerTime": "1519",
-                  "timeOut": "1520",
-                  "station": "bbcRadio4"
+                  "triggerTime": "1542",
+                  "timeOut": "1543",
+                  "station": "smooth"
                 }
             },
             "location": {
