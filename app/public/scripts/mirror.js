@@ -1,5 +1,5 @@
 var weather = require('./widgets/weather');
-var travel = require('./widgets/travel');
+var travel = require('./widgets/tfl-trains');
 var clock = require('./widgets/clock');
 
 weather.init();

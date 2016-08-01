@@ -55,7 +55,7 @@
   height: 100px;
 }
 
-#widget-settings-tfl.active {
+#widget-settings-tfl-trains.active {
   height: 405px;
 }
 
@@ -86,7 +86,7 @@ li.active {
   }
 }
 
-.tfl-list-item.active {
+.tfl-trains-list-item.active {
   .widget-name {
     background-color: $blue;
   }

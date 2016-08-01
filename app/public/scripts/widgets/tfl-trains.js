@@ -1,6 +1,6 @@
 ;(function(exports){
   // TFL API
-  var api = 'https://api.tfl.gov.uk/line/mode/tube,overground,dlr,tflrail/status';
+  var api = 'https://api.tfl.gov.uk/line/mode/tube,overground,dlr,tflrail,tram/status';
   var lines = [];
 
   $('.tube-status').each(function(){
@@ -22,10 +22,13 @@
 	    		// and check if the line matches one of the lines of interest..
 	    		if (lines.indexOf(data[i].id) > -1){
             var tubeStatus = data[i].lineStatuses[0].statusSeverityDescription;
-            var selector = $("span[data-line='" + data[i].id + "']");
-            selector.text(
+            var statusSelector = $("span[data-line='" + data[i].id + "']");
+            statusSelector.text(
               tubeStatus.charAt(0).toUpperCase() + tubeStatus.slice(1).toLowerCase()
             );
+
+            var lineNameSelector = $('.tube-' + data[i].id);
+            lineNameSelector.text(data[i].name + ' line');
           }
 		    }
 	    }
