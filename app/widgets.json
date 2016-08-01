@@ -6,8 +6,8 @@
                 "location": "London"
             },
             "location": {
-                "row": 0,
-                "column": 0,
+                "row": 2,
+                "column": 2,
                 "height": 1,
                 "width": 1
             },
@@ -23,7 +23,7 @@
                 ]
             },
             "location": {
-                "row": 0,
+                "row": 1,
                 "column": 1,
                 "height": 1,
                 "width": 1
@@ -37,7 +37,7 @@
                 "timezone": "london"
             },
             "location": {
-                "row": 0,
+                "row": 1,
                 "column": 0,
                 "height": 1,
                 "width": 1
