@@ -1,0 +1,13 @@
+<div>
+  <form action="">
+  <label>
+    Location: <input type="text" name="location" data-name="{{ widget.name }}" value="{{ widget.settings.location }}">
+  </label>
+  <label>
+    <input type="radio" name="unit" value="celsius" data-name="{{ widget.name }}" {% if widget.settings.unit == "celsius" %}checked="checked"{% endif %}> Celsius
+  </label>
+  <label>
+    <input type="radio" name="unit" value="fahrenheit" data-name="{{ widget.name }}" {% if widget.settings.unit == "fahrenheit" %}checked="checked"{% endif %}> Fahrenheit
+  </label>
+  </form>
+</div>
