@@ -37,8 +37,8 @@
                 "timezone": "london",
                 "radio": {
                   "enabled": true,
-                  "triggerTime": "1615",
-                  "timeOut": "1616",
+                  "triggerTime": "1637",
+                  "timeOut": "none",
                   "station": "smooth"
                 }
             },
