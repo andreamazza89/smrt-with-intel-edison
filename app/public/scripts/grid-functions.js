@@ -64,7 +64,7 @@
   exports.gridPosition = gridPosition;
   exports.getFreeLocation = getFreeLocation;
   exports.spaceFree = spaceFree;
-  exports.positionKey = pois;
-  exports.spaceFree = spaceFree;
-  exports.spaceFree = spaceFree;
+  exports.positionKey = positionKey;
+  exports.positionKey2 = positionKey2;
+  exports.draggableConfig = draggableConfig;
 })(this);
