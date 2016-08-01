@@ -5,10 +5,10 @@ var browserify = require('browserify-middleware');
 var express = require('express');
 var app = express();
 var nunjucks = require('nunjucks');
-var fs = require('fs');
 var sass = require('node-sass-middleware');
 
 var WIDGETS_FILE = __dirname + (process.env.widget_path || '/widgets') +  '.json';
+var browserSync = require('browser-sync').create();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -27,8 +27,8 @@ app.use(sass({
 app.set('view engine', 'njk');
 
 app.use(express.static('./app/public'));
-app.get('/bundle.js', browserify('./app/widgets/main.js'));
-app.get('/scripts/bundle.js', browserify('./app/public/scripts/interface.js'));
+app.get('/scripts/mirror-bundle.js', browserify(__dirname + '/public/scripts/mirror.js'));
+app.get('/scripts/cp-bundle.js', browserify(__dirname + '/public/scripts/control-panel.js'));
 
 app.get('/', function(req, res){
   fs.readFile(WIDGETS_FILE, function(err, data) {
@@ -72,6 +72,11 @@ app.post('/api/widgets', function(req, res) {
   });
 });
 
+browserSync.init({
+  proxy: 'localhost:3000',
+  files: ['./app/widgets.json'],
+  startPath: '/mirror'
+});
 
 app.listen(3000, function(){
   console.log('listening at http://localhost:3000');

@@ -7,7 +7,7 @@
             },
             "location": {
                 "row": 2,
-                "column": 0,
+                "column": 1,
                 "height": 1,
                 "width": 1
             },
@@ -24,7 +24,7 @@
             },
             "location": {
                 "row": 0,
-                "column": 2,
+                "column": 1,
                 "height": 1,
                 "width": 1
             },
@@ -37,13 +37,13 @@
                 "timezone": "london",
                 "radio": {
                   "enabled": true,
-                  "triggerTime": "1542",
-                  "timeOut": "1543",
+                  "triggerTime": "1615",
+                  "timeOut": "1616",
                   "station": "smooth"
                 }
             },
             "location": {
-                "row": 0,
+                "row": 2,
                 "column": 0,
                 "height": 1,
                 "width": 1
