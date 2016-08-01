@@ -1,5 +1,5 @@
 .widget-name {
-  width: 190px;
+  width: 200px;
   height: 40px;
   background-color: #99a2a5;
   color: #fff;
@@ -44,10 +44,31 @@
   height: 0px;
   float: left;
   background-color: $blue-grey;
+  color: white;
+  font-weight: lighter;
+  line-height: 130%;
   transition: all 0.3s;
+  overflow: auto;
 }
+
 .widget-settings.active {
   height: 100px;
+}
+
+#widget-settings-tfl.active {
+  height: 405px;
+}
+
+.widget-settings form {
+  padding: 10px;
+}
+
+label {
+    display: block;
+}
+
+label {
+    margin-bottom: 8px;
 }
 
 li.active {

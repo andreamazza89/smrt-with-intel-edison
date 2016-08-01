@@ -27,9 +27,26 @@ $(document).ready(function(){
     setDragBox(this, gridLocation);
   });
 
+  $('input:radio').click(function(){
+    var widgetName = $(this).data('name');
+    var setting = [this.name, $(this).val()];
+    getJSON(wjson.changeSetting, widgetName, setting);
+  });
+
+  $('input:checkbox').change(function(){
+    var widgetName = $(this).data('name');
+    var setting = [$(this).val(), $(this).is(':checked')];
+    getJSON(wjson.changeSetting, widgetName, setting);
+  });
+
+  $('input:text').change(function(){
+    var widgetName = $(this).data('name');
+    var setting = [this.name, $(this).val()];
+    getJSON(wjson.changeSetting, widgetName, setting);
+  });
+
   $('.widget-settings-button').click(function() {
     var widgetName = $(this).data('name');
-    console.log(widgetName);
     $('#widget-settings-'+widgetName).toggleClass('active');
   });
 
