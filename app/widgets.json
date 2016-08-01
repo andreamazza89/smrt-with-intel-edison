@@ -43,14 +43,14 @@
         {
             "name": "clock",
             "settings": {
-                "format": "24-hour",
+                "format": "analog",
                 "radio": {
                     "enabled": true,
                     "triggerTime": "1748",
                     "timeOut": "none",
                     "station": "smooth"
                 },
-                "date": true
+                "date": false
             },
             "location": {
                 "row": 0,
