@@ -4,13 +4,20 @@ var container = $('#tfl-widget');
 
 // Pick tube lines of interest
 var lines = [
+  'bakerloo',
+  'central',
 	'circle',
+  'district',
+  'dlr',
 	'hammersmith-city',
+  'jubilee',
 	'northern',
+  'overground',
 	'piccadilly',
-	'victoria'
+  'tramlink',
+	'victoria',
+  'waterloo-city'
 ];
-
 
 (function(exports){
 
