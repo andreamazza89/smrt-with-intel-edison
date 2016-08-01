@@ -26,9 +26,6 @@
             statusSelector.text(
               tubeStatus.charAt(0).toUpperCase() + tubeStatus.slice(1).toLowerCase()
             );
-
-            var lineNameSelector = $('.tube-' + data[i].id);
-            lineNameSelector.text(data[i].name + ' line');
           }
 		    }
 	    }
