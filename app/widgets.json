@@ -36,9 +36,10 @@
                 "format": "24",
                 "timezone": "london",
                 "radio": {
-                  "enabled": false,
-                  "trigger-time": "2016-08-01T09:28:21.807Z",
-                  "station": "magic"
+                  "enabled": true,
+                  "triggerTime": "1519",
+                  "timeOut": "1520",
+                  "station": "bbcRadio4"
                 }
             },
             "location": {
