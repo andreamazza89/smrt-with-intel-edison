@@ -1,74 +1,63 @@
+.widget-name,
+.widget-check,
+.widget-settings-button {
+  height: 40px;
+  color: $white;
+  float: left;
+  border: 0px;
+  cursor: pointer;
+  outline: none;
+}
+
 .widget-name {
   width: 200px;
-  height: 40px;
   background-color: #99a2a5;
-  color: #fff;
   list-style: none;
   font-weight: lighter;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  float: left;
   padding-left: 10px;
   transition: all 0.2s;
 }
 
 .widget-check {
   width: 40px;
-  height: 40px;
   background-color: #818a8c;
-  color: #fff;
-  float: left;
-  border: 0px;
-  cursor: pointer;
   transition: all 0.2s;
-  outline: none;
   background-image: url(/images/status.png);
   background-position: 0px -40px;
 }
 
 .widget-settings-button {
   width: 40px;
-  height: 40px;
   background-color: $blue-grey;
-  color: #fff;
-  float: left;
-  border: 0px;
-  cursor: pointer;
-  outline: none;
   background-image: url(/images/settings.png);
 }
 
 .widget-settings {
   width: 280px;
-  height: 0px;
+  max-height: 0px;
   float: left;
   background-color: $blue-grey;
   color: white;
   font-weight: lighter;
   line-height: 130%;
-  transition: all 0.3s;
-  overflow: auto;
-}
+  transition: max-height 0.5s;
+  overflow: hidden;
 
-.widget-settings.active {
-  height: 100px;
-}
+  &.active {
+    max-height: 600px;
+  }
 
-#widget-settings-tfl-trains.active {
-  height: 405px;
-}
-
-.widget-settings form {
-  padding: 10px;
+  form {
+    padding: 10px;
+  }
 }
 
 label {
-    display: block;
-}
-
-label {
-    margin-bottom: 8px;
+  display: block;
+  margin-bottom: 8px;
 }
 
 li.active {
@@ -100,6 +89,6 @@ li.active {
     background-color: $fuschia;
   }
   .widget-check {
-    background-color: darken($fuschia, 10%);;
+    background-color: darken($fuschia, 10%);
   }
 }
