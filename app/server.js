@@ -75,9 +75,11 @@ app.post('/api/widgets', function(req, res) {
 browserSync.init({
   proxy: 'localhost:3000',
   files: ['./app/widgets.json'],
-  startPath: '/mirror'
+  open: false,
+  logLevel: "silent"
 });
 
 app.listen(3000, function(){
-  console.log('listening at http://localhost:3000');
+  console.log("\x1b[36mControl Panel\x1b[0m\nhttp://localhost:3000\n");
+  console.log("\x1b[36mMirror\x1b[0m\nhttp://localhost:3001/mirror");
 });
