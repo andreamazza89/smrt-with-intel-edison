@@ -34,7 +34,12 @@
             "name": "clock",
             "settings": {
                 "format": "24",
-                "timezone": "london"
+                "timezone": "london",
+                "radio": {
+                  "enabled": false,
+                  "trigger-time": "2016-08-01T09:28:21.807Z",
+                  "station": "magic"
+                }
             },
             "location": {
                 "row": 0,
