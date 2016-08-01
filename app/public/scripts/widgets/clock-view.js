@@ -20,6 +20,12 @@
     return day.toString() + '/' + month.toString() + '/' + year.toString();
   }
 
+  function updateAnalogClock(now, el) {
+    $(el).find('.hour').css({ transform: 'rotate(' + (360 / 12) * now.getHours() + 'deg)' });
+    $(el).find('.minute').css({ transform: 'rotate(' + (360 / 60) * now.getMinutes() + 'deg)' });
+    $(el).find('.second').css({ transform: 'rotate(' + (360 / 60) * now.getSeconds() + 'deg)' });
+  }
+
   function twoDigitsZeroPadding(number) {
     stringyNumber = number.toString();
     if (stringyNumber.length < 2) {
@@ -31,5 +37,6 @@
 
   exports.getTime = getTime;
   exports.getDate = getDate;
+  exports.updateAnalogClock = updateAnalogClock;
 
 })(this);

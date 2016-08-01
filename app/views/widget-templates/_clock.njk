@@ -6,7 +6,13 @@
 </div>
 
 {% if widget.settings.format == 'analog' %}
-<canvas id="clock" width=180% height=180% ></canvas>
+<div id="analog-clock" class="analog-clock-container">
+  <div class="analog-clock">
+    <div class="hour hands"></div>
+    <div class="minute hands"></div>
+    <div class="second hands"></div>
+  </div>
+</div>
 {% else %}
 <div id="time" data-format="{{ widget.settings.format }}">
   00:00:00
