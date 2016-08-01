@@ -1,0 +1,84 @@
+.widget-name {
+  width: 190px;
+  height: 40px;
+  background-color: #99a2a5;
+  color: #fff;
+  list-style: none;
+  font-weight: lighter;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  float: left;
+  padding-left: 10px;
+  transition: all 0.2s;
+}
+
+.widget-check {
+  width: 40px;
+  height: 40px;
+  background-color: #818a8c;
+  color: #fff;
+  float: left;
+  border: 0px;
+  cursor: pointer;
+  transition: all 0.2s;
+  outline: none;
+  background-image: url(/images/status.png);
+  background-position: 0px -40px;
+}
+
+.widget-settings-button {
+  width: 40px;
+  height: 40px;
+  background-color: $blue-grey;
+  color: #fff;
+  float: left;
+  border: 0px;
+  cursor: pointer;
+  outline: none;
+  background-image: url(/images/settings.png);
+}
+
+.widget-settings {
+  width: 280px;
+  height: 0px;
+  float: left;
+  background-color: $blue-grey;
+  transition: all 0.3s;
+}
+.widget-settings.active {
+  height: 100px;
+}
+
+li.active {
+  .widget-check {
+    background-position: 0px 0px;
+  }
+}
+
+.weather-list-item.active {
+  .widget-name {
+    background-color: $green;
+  }
+  .widget-check {
+    background-color: darken($green, 10%);
+  }
+}
+
+.tfl-list-item.active {
+  .widget-name {
+    background-color: $blue;
+  }
+  .widget-check {
+    background-color: darken($blue, 10%);
+  }
+}
+
+.clock-list-item.active {
+  .widget-name {
+    background-color: $fuschia;
+  }
+  .widget-check {
+    background-color: darken($fuschia, 10%);;
+  }
+}

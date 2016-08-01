@@ -1,8 +1,7 @@
 {% extends './layout.njk' %}
 
 {% block styles %}
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/button-styles.css">
+  <link rel="stylesheet" href="css/control-panel.css">
   <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
 {% endblock %}
 
@@ -14,18 +13,32 @@
     {% for i in range(0,9) %}
       <div class="grid-box"></div>
     {% endfor %}
+
+    {% for widget in widgetData %}
+      {% if widget.active %}
+        <div id="widget-box-{{ widget.name }}"
+        class="widget-box widget-box-{{ widget.name }}"
+        data-location-row="{{ widget.location.row }}"
+        data-location-column="{{ widget.location.column }}"
+        data-location-height="{{ widget.location.height }}"
+        data-location-width="{{ widget.location.width }}"
+        data-name="{{ widget.name }}">
+          {{ widget.name }}
+        </div>
+      {% endif %}
+    {% endfor %}
   </div>
 
   <div id="widget-list-container">
   <ul>
     {% for widget in widgetData %}
-      <li>
+      <li class="{{ widget.name }}-list-item {% if widget.active %}active{% endif %}">
         <div class="widget-name" id="widget-name-{{ widget.name }}">{{ widget.name }}</div>
-        <button class="widget-check" id="widget-check-{{ widget.name }}"> </button>
-        <button class="widget-settings" id="widget-settings-{{ widget.name }}"></button>
+        <button class="widget-check" id="widget-check-{{ widget.name }}" data-name="{{ widget.name }}"> </button>
+        <button class="widget-settings-button" id="widget-settings-button-{{ widget.name }}" data-name="{{ widget.name }}"></button>
+        <div class="widget-settings" id="widget-settings-{{ widget.name }}" data-name="{{ widget.name }}"></div>
       </li>
     {% endfor %}
-
   </ul>
   </div>
 
@@ -34,5 +47,4 @@
 {% block scripts %}
   <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
   <script src="scripts/bundle.js"></script>
-  <script src="scripts/styling.js"></script>
 {% endblock %}
