@@ -3,31 +3,8 @@
         {
             "name": "weather",
             "settings": {
-                "location": "Dublin",
-                "unit": "celsius"
-            },
-            "location": {
-                "row": 0,
-                "column": 1,
-                "height": 1,
-                "width": 1
-            },
-            "active": true
-        },
-        {
-            "name": "tfl",
-            "settings": {
-                "bakerloo": false,
-                "central": true,
-                "circle": false,
-                "district": false,
-                "hammersmith": false,
-                "jubilee": true,
-                "metropolitan": false,
-                "northern": false,
-                "piccadilly": false,
-                "victoria": false,
-                "waterloo": true
+                "location": "Barcelona",
+                "unit": "fahrenheit"
             },
             "location": {
                 "row": 0,
@@ -38,10 +15,36 @@
             "active": true
         },
         {
+            "name": "tfl",
+            "settings": {
+                "bakerloo": true,
+                "central": false,
+                "circle": true,
+                "district": true,
+                "hammersmith-city": false,
+                "jubilee": true,
+                "metropolitan": true,
+                "northern": false,
+                "piccadilly": false,
+                "victoria": false,
+                "waterloo-city": true,
+                "dlr": true,
+                "tramlink": true,
+                "overground": false
+            },
+            "location": {
+                "row": 0,
+                "column": 1,
+                "height": 1,
+                "width": 1
+            },
+            "active": true
+        },
+        {
             "name": "clock",
             "settings": {
-                "format": "12",
-                "location": "Madrid"
+                "format": "24",
+                "location": "London"
             },
             "location": {
                 "row": 0,
