@@ -30,6 +30,12 @@ $(document).ready(function(){
     getJSON(wjson.changeSetting, widgetName, setting);
   });
 
+  $('input:checkbox').change(function(){
+    var widgetName = $(this).data('name');
+    var setting = [$(this).val(), $(this).is(':checked')];
+    getJSON(wjson.changeSetting, widgetName, setting);
+  });
+
   $('input:text').change(function(){
     var widgetName = $(this).data('name');
     var setting = [this.name, $(this).val()];

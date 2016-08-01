@@ -8,24 +8,30 @@
             },
             "location": {
                 "row": 0,
-                "column": 0,
+                "column": 1,
                 "height": 1,
                 "width": 1
             },
-            "active": true
+            "active": false
         },
         {
             "name": "tfl",
             "settings": {
-                "lines": [
-                    "central",
-                    "jubilee",
-                    "northern"
-                ]
+                "bakerloo": false,
+                "central": true,
+                "circle": false,
+                "district": false,
+                "hammersmith": false,
+                "jubilee": true,
+                "metropolitan": false,
+                "northern": false,
+                "piccadilly": false,
+                "victoria": false,
+                "waterloo": true
             },
             "location": {
-                "row": 1,
-                "column": 2,
+                "row": 0,
+                "column": 0,
                 "height": 1,
                 "width": 1
             },
@@ -38,12 +44,12 @@
                 "location": "Madrid"
             },
             "location": {
-                "row": 0,
-                "column": 1,
+                "row": 1,
+                "column": 0,
                 "height": 1,
                 "width": 1
             },
-            "active": true
+            "active": false
         }
     ]
 }

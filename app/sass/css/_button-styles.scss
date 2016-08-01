@@ -48,11 +48,15 @@
   font-weight: lighter;
   line-height: 130%;
   transition: all 0.3s;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .widget-settings.active {
   height: 100px;
+}
+
+#widget-settings-tfl.active {
+  height: 320px;
 }
 
 .widget-settings form {
