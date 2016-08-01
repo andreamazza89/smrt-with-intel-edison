@@ -1,14 +1,17 @@
-var positionKey = require('./grid-functions').positionKey;
-var positionKey2 = require('./grid-functions').positionKey2;
-var draggableConfig = require('./grid-functions').draggableConfig;
+var gridFuncs = require('./control-panel/grid-functions');
+var jsonFuncs = require('./control-panel/json');
+var frameworkFuncs = require('./control-panel/framework');
 
-var getJSON = require('./json').getJSON;
-var setJSON = require('./json').setJSON;
-var widgetJSON = require('./framework').widgetJSON;
-var setDragBox = require('./grid-functions').setDragBox;
-var gridPosition = require('./grid-functions').gridPosition;
-var getFreeLocation = require('./grid-functions').getFreeLocation;
-var spaceFree = require('./grid-functions').spaceFree;
+var positionKey = gridFuncs.positionKey,
+    positionKey2 = gridFuncs.positionKey2,
+    draggableConfig = gridFuncs.draggableConfig,
+    setDragBox = gridFuncs.setDragBox,
+    gridPosition = gridFuncs.gridPosition,
+    getFreeLocation = gridFuncs.getFreeLocation,
+    spaceFree = gridFuncs.spaceFree;
+var getJSON = jsonFuncs.getJSON,
+    setJSON = jsonFuncs.setJSON;
+var widgetJSON = frameworkFuncs.widgetJSON;
 
 $(document).ready(function(){
 

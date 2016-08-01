@@ -27,8 +27,8 @@ app.use(sass({
 app.set('view engine', 'njk');
 
 app.use(express.static('./app/public'));
-app.get('/bundle.js', browserify('./app/widgets/main.js'));
-app.get('/scripts/bundle.js', browserify('./app/public/scripts/interface.js'));
+app.get('/scripts/mirror-bundle.js', browserify(__dirname + '/public/scripts/mirror.js'));
+app.get('/scripts/cp-bundle.js', browserify(__dirname + '/public/scripts/control-panel.js'));
 
 app.get('/', function(req, res){
   fs.readFile(WIDGETS_FILE, function(err, data) {

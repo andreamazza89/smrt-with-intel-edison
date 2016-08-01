@@ -18,12 +18,12 @@ LeapCursor.prototype = {
 	height				: 110,
 
 	top					: null,
-	left				: null,
+	left				: -5000,
 
 	defaultHandPosition	: false,
 
 	gestureColor		: '#88CFEB',
-	color				: '#000000',
+	color				: 'white',
 
 	yOffset 			: -160,
 
