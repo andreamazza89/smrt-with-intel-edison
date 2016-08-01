@@ -1,5 +1,8 @@
-<div class="inner" data-timezone="{{ widget.settings.timezone }}"></div>
-
+<div class="inner" data-timezone="{{ widget.settings.timezone }}"
+                   data-radio-enabled="{{ widget.settings.radio.enabled }}"
+                   data-radio-trigger-time="{{ widget.settings.radio.triggerTime }}"
+                   data-radio-timeout="{{ widget.settings.radio.timeOut }}"
+                   data-radio-station="{{ widget.settings.radio.station }}"></div>
 <br>
 
 <div id="location">
@@ -17,6 +20,10 @@
 <div id="date">
   Date
 </div>
+
+<audio id='audio-player'>
+  <source id="radio-station" type="audio/mpeg">
+</audio>
 
 <div id='clockWrapper'>
   <div class="inner" data-timezone="{{ widget.settings.timezone }}" ></div>
