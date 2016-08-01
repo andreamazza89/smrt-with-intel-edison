@@ -4,7 +4,7 @@
   {{ enabled }}
   {{ widget.settings[line] }} #}
   {% if enabled %}
-    <li class="flex-container">
+    <li class="flex-container" id="{{ line }}">
       <span class="tube-status" data-line="{{ line }}">Good service</span>
        on the
       <span class="tube-title tube-{{ line }}">{{ line }} line</span>

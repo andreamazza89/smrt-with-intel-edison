@@ -1,0 +1,11 @@
+<div>
+  <form action="">
+    {% for line, enabled in widget.settings %}
+    <label>
+      <input type="checkbox" value="{{ line }}" data-name="{{ widget.name }}"
+      {% if enabled %}checked="checked"{% endif %}>
+      {{ line | replace('-city', ' & city') | replace('london-', ' ') | title }}
+    </label>
+    {% endfor %}
+  </form>
+</div>

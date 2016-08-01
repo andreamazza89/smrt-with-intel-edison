@@ -15,22 +15,22 @@
             "active": true
         },
         {
-            "name": "tfl",
+            "name": "tfl-trains",
             "settings": {
                 "bakerloo": true,
-                "central": false,
-                "circle": true,
+                "central": true,
+                "circle": false,
                 "district": true,
-                "hammersmith-city": false,
-                "jubilee": true,
+                "hammersmith-city": true,
+                "jubilee": false,
                 "metropolitan": true,
-                "northern": false,
-                "piccadilly": false,
+                "northern": true,
+                "piccadilly": true,
                 "victoria": false,
                 "waterloo-city": true,
                 "dlr": true,
-                "tramlink": true,
-                "overground": false
+                "tram": true,
+                "london-overground": true
             },
             "location": {
                 "row": 0,
