@@ -21,7 +21,7 @@
   }
 
   function updateAnalogClock(now, el) {
-    $(el).find('.hour').css({ transform: 'rotate(' + (360 / 12) * now.getHours() + 'deg)' });
+    $(el).find('.hour').css({ transform: 'rotate(' + (360 / 12) * (now.getHours() + (now.getMinutes() * 1/60)) + 'deg)' });
     $(el).find('.minute').css({ transform: 'rotate(' + (360 / 60) * now.getMinutes() + 'deg)' });
     $(el).find('.second').css({ transform: 'rotate(' + (360 / 60) * now.getSeconds() + 'deg)' });
   }
