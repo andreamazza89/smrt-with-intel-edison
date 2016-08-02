@@ -9,11 +9,11 @@ clock.init();
 rss.init();
 
 var lastGestureTime = Date.now();
+var testFunction;
 
 $(document).ready(function(){
   var controller  = new Leap.Controller({enableGestures: true});
   controller.on('deviceFrame', function(frame) {
-
 
     if (frame.gestures.length > 0) {
       var gesture = frame.gestures[0];
@@ -54,10 +54,17 @@ $(document).ready(function(){
   $('.mirror-widget').each(function(){
     bind(this, 'mouseenter', function(){
       $(this).addClass('active');
+
+      // testFunction = setTimeout(function(){
+        // DO SOMETHING
+      // }, 1000);
     });
 
     bind(this, 'mouseleave', function(){
       $(this).removeClass('active');
+
+      // clearTimeout(testFunction);
     });
   });
+
 });

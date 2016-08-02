@@ -65,7 +65,7 @@
             "settings": {
                 "sources": [
                     "http://feeds.bbci.co.uk/news/rss.xml?edition=uk",
-                    "https://www.smashingmagazine.com/feed/"
+                    "http://rss.cnn.com/rss/edition.rss"
                 ]
             },
             "location": {

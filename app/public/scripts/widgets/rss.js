@@ -1,14 +1,34 @@
 ;(function(exports){
+  var testFunction;
+
+  function bind(elm, evt, f) {
+    if (elm.addEventListener) {
+      elm.addEventListener(evt, f, false);
+    } else if (elm.attachEvent) {
+      elm.attachEvent('on' + evt, f);
+    }
+  }
+
   function init(){
     $('#rss-widget').find('ul').each(function(){
       var st = '';
       parseRSS($(this).data('src'), function(data, elm){
         var array = data.entries.slice(0, 2);
-        console.log(array);
+
         for(var i = 0; i < array.length; i++){
-          st = st + '<li><strong>' + array[i].title + '</strong><br>' + array[i].publishedDate + '</li>';
+          st = st + '<li><strong>' + array[i].title + '</strong><br>' + array[i].publishedDate + '<br><span class="content">' + array[i].content + '</span></li>';
         }
         elm.html(st);
+
+        $('#rss-widget li').each(function(){
+          bind(this, 'mouseenter', function(){
+            $(this).addClass('active');
+          });
+
+          bind(this, 'mouseleave', function(){
+            $(this).removeClass('active');
+          });
+        });
       }, $(this));
     });
   }
