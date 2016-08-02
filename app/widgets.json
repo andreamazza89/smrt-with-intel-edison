@@ -43,11 +43,11 @@
         {
             "name": "clock",
             "settings": {
-                "format": "analog",
+                "format": "24-hour",
                 "date": false,
                 "radioAlarm": true,
-                "radioStation": "bbcRadio4",
-                "radioOnTime": "20:20"
+                "radioStation": "smooth",
+                "radioOnTime": "14:57"
             },
             "location": {
                 "row": 1,
