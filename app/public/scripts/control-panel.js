@@ -39,9 +39,26 @@ $(document).ready(function(){
     getJSON(wjson.changeSetting, widgetName, setting);
   });
 
-  $('input:text').change(function(){
+  $('input:text').change(function(e){
+    e.preventDefault();
     var widgetName = $(this).data('name');
     var setting = [this.name, $(this).val()];
+    getJSON(wjson.changeSetting, widgetName, setting);
+  });
+
+  $('#radioOnTime').submit(function(e){
+    e.preventDefault();
+    var radioOnTime = $('#radioOnTime').serializeArray()[0].value;
+    var widgetName = $(this).data('name');
+    var setting = [this.name, radioOnTime];
+    getJSON(wjson.changeSetting, widgetName, setting);
+  });
+
+  $('#radioStation').submit(function(e){
+    e.preventDefault();
+    var radioStation = ;
+    var widgetName = $(this).data('name');
+    var setting = [this.name, radioOnTime];
     getJSON(wjson.changeSetting, widgetName, setting);
   });
 

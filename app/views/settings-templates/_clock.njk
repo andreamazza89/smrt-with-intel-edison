@@ -13,5 +13,24 @@
       {% if widget.settings.date %}checked="checked"{% endif %}>
       Date
     </label>
+    <label>
+      <input type="checkbox" name="radioAlarm" value="radioAlarm" data-name="{{ widget.name }}"
+      {% if widget.settings.radioAlarm %}checked="checked"{% endif %}>
+      Radio Alarm
+    </label>
+  </form>
+  <form id="radioOnTime" name="radioOnTime" data-name="{{ widget.name }}">
+    <label>
+      <input type="time" name="radioOnTime">
+      Alarm Time
+      <input type="submit">
+    </label>
+  </form>
+  <form id="radioStation" name="radioStation" data-name="{{ widget.name }}">
+    <select name='radioStation' onchange='this.form.submit()'>
+     <option selected>magic</option>
+     <option>bbcRadio4</option>
+     <option>smooth</option>
+    </select>
   </form>
 </div>
