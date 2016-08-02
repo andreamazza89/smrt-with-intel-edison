@@ -7,7 +7,6 @@ var fs = require('fs'),
     nunjucks = require('nunjucks'),
     sass = require('node-sass-middleware');
 
-var WIDGETS_FILE = __dirname + (process.env.widget_path || '/widgets') +  '.json';
 var browserSync = require('browser-sync').create();
 
 app.use(bodyParser.json());
@@ -30,7 +29,7 @@ app.get('/scripts/mirror-bundle.js', browserify(__dirname + '/public/scripts/mir
 app.get('/scripts/cp-bundle.js', browserify(__dirname + '/public/scripts/control-panel.js'));
 
 app.get('/', function(req, res){
-  fs.readFile(WIDGETS_FILE, function(err, data) {
+  fs.readFile(getJSONPath(), function(err, data) {
     if (err) {
       console.error(err);
       process.exit(1);
@@ -40,7 +39,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/mirror', function(req, res){
-  fs.readFile(WIDGETS_FILE, function(err, data) {
+  fs.readFile(getJSONPath(), function(err, data) {
     if (err) {
       console.error(err);
       process.exit(1);
@@ -50,7 +49,7 @@ app.get('/mirror', function(req, res){
 });
 
 app.get('/api/widgets', function(req, res) {
-  fs.readFile(WIDGETS_FILE, function(err, data) {
+  fs.readFile(getJSONPath(), function(err, data) {
     if (err) {
       console.error(err);
       process.exit(1);
@@ -61,7 +60,7 @@ app.get('/api/widgets', function(req, res) {
 
 app.post('/api/widgets', function(req, res) {
   var widgets = req.body;
-  fs.writeFile(WIDGETS_FILE, JSON.stringify(widgets, null, 4), function(err) {
+  fs.writeFile(getJSONPath(), JSON.stringify(widgets, null, 4), function(err) {
     if (err) {
       console.error(err);
       process.exit(1);
@@ -78,9 +77,11 @@ browserSync.init({
   notify: false
 });
 
-// browserSync.notify('Updating...');
-
 app.listen(3000, function(){
   console.log("\x1b[36mControl Panel\x1b[0m\nhttp://localhost:3000\n");
   console.log("\x1b[36mMirror\x1b[0m\nhttp://localhost:3001/mirror");
 });
+
+function getJSONPath(){
+  return __dirname + (process.env.widget_path || '/widgets') +  '.json';
+}

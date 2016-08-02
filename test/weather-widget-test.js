@@ -18,11 +18,11 @@ describe('Mirror page',function(){
       process.env.widget_path = '/../test/widget-configs/tfl-active';
       browser
         .url('/mirror')
-        .waitForText('#tfl-widget');
+        .waitForText('#tfl-trains-widget');
     });
 
     it('displays a tfl widget', function(){
-      expect(browser.getText('#tfl-widget')).to.not.be.empty;
+      expect(browser.getText('#tfl-trains-widget')).to.not.be.empty;
     });
   });
 

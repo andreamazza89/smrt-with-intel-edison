@@ -1,10 +1,64 @@
-{ "widgets": [
-  {
-  "name": "tfl",
-   "active": false
-  },
-  {
-  "name": "weather",
-   "active": false
-  }
-]}
+{
+    "widgets": [
+        {
+            "name": "weather",
+            "settings": {
+                "location": "London",
+                "unit": "celsius"
+            },
+            "location": {
+                "row": 0,
+                "column": 1,
+                "height": 1,
+                "width": 1
+            },
+            "active": false
+        },
+        {
+            "name": "tfl-trains",
+            "settings": {
+                "bakerloo": false,
+                "central": true,
+                "circle": false,
+                "district": false,
+                "hammersmith-city": true,
+                "jubilee": false,
+                "metropolitan": true,
+                "northern": false,
+                "piccadilly": true,
+                "victoria": true,
+                "waterloo-city": false,
+                "dlr": false,
+                "tram": false,
+                "london-overground": false
+            },
+            "location": {
+                "row": 0,
+                "column": 2,
+                "height": 1,
+                "width": 1
+            },
+            "active": false
+        },
+        {
+            "name": "clock",
+            "settings": {
+                "format": "analog",
+                "radio": {
+                    "enabled": true,
+                    "triggerTime": "1748",
+                    "timeOut": "none",
+                    "station": "smooth"
+                },
+                "date": true
+            },
+            "location": {
+                "row": 0,
+                "column": 0,
+                "height": 1,
+                "width": 1
+            },
+            "active": false
+        }
+    ]
+}
