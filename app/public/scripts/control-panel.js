@@ -46,20 +46,15 @@ $(document).ready(function(){
     getJSON(wjson.changeSetting, widgetName, setting);
   });
 
-  $('#radioOnTime').submit(function(e){
+  $('#radioSettings').submit(function(e){
     e.preventDefault();
-    var radioOnTime = $('#radioOnTime').serializeArray()[0].value;
+    var radioStation = $('#radioSettings').serializeArray()[0].value;
+    var radioOnTime = $('#radioSettings').serializeArray()[1].value;
     var widgetName = $(this).data('name');
-    var setting = [this.name, radioOnTime];
-    getJSON(wjson.changeSetting, widgetName, setting);
-  });
-
-  $('#radioStation').submit(function(e){
-    e.preventDefault();
-    var radioStation = ;
-    var widgetName = $(this).data('name');
-    var setting = [this.name, radioOnTime];
-    getJSON(wjson.changeSetting, widgetName, setting);
+    var timeSetting = ["radioOnTime", radioOnTime];
+    var stationSetting = ["radioStation", radioStation];
+    getJSON(wjson.changeSetting, widgetName, timeSetting);
+    setTimeout(function() { getJSON(wjson.changeSetting, widgetName, stationSetting); }, 100);
   });
 
   $('.widget-settings-button').click(function() {

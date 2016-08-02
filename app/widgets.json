@@ -46,7 +46,8 @@
                 "format": "analog",
                 "date": false,
                 "radioAlarm": true,
-                "radioOnTime": "11:01"
+                "radioStation": "bbcRadio4",
+                "radioOnTime": "20:20"
             },
             "location": {
                 "row": 1,

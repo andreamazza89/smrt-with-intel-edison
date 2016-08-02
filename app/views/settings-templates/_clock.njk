@@ -19,18 +19,15 @@
       Radio Alarm
     </label>
   </form>
-  <form id="radioOnTime" name="radioOnTime" data-name="{{ widget.name }}">
+  <form id="radioSettings" data-name="{{ widget.name }}">
     <label>
-      <input type="time" name="radioOnTime">
+      <select name='radioStation'>
+       <option {% if widget.settings.radioStation == "magic" %}selected{% endif %}>magic</option>
+       <option {% if widget.settings.radioStation == "bbcRadio4" %}selected{% endif %}>bbcRadio4</option>
+       <option {% if widget.settings.radioStation == "smooth" %}selected{% endif %}>smooth</option>
+      <input type="time" value="{{ widget.settings.radioOnTime  }}" name="radioOnTime">
       Alarm Time
       <input type="submit">
     </label>
-  </form>
-  <form id="radioStation" name="radioStation" data-name="{{ widget.name }}">
-    <select name='radioStation' onchange='this.form.submit()'>
-     <option selected>magic</option>
-     <option>bbcRadio4</option>
-     <option>smooth</option>
-    </select>
   </form>
 </div>
