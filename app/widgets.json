@@ -43,10 +43,10 @@
         {
             "name": "clock",
             "settings": {
-                "format": "24-hour",
-                "date": true,
+                "format": "analog",
+                "date": false,
                 "radioAlarm": true,
-                "radioOnTime": "15:28",
+                "radioOnTime": "17:32",
                 "radioStation": "smooth"
             },
             "location": {
@@ -62,7 +62,7 @@
             "settings": {
                 "sources": [
                     "http://feeds.bbci.co.uk/news/rss.xml?edition=uk",
-                    "https://www.smashingmagazine.com/feed/"
+                    "http://rss.cnn.com/rss/edition.rss"
                 ]
             },
             "location": {

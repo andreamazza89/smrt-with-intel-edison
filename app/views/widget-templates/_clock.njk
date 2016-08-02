@@ -19,11 +19,9 @@
 </div>
 {% endif %}
 
-{% if widget.settings.date %}
-<div id="date">
+<div id="date" {% if widget.settings.date == false %}class="hidden date"{% endif %}>
   01/01/2000
 </div>
-{% endif %}
 
 <audio id='audio-player'>
   <source id="radio-station" type="audio/mpeg">

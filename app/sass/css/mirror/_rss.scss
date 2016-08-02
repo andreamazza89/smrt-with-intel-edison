@@ -1,0 +1,19 @@
+#rss-widget {
+  li {
+    margin-bottom: 1.5em;
+  }
+
+  .content {
+    display: block;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 1s;
+  }
+
+  li.active {
+    .content {
+      transition: max-height 1.5s;
+      max-height: 999px;
+    }
+  }
+}
