@@ -4,8 +4,9 @@
       var st = '';
       parseRSS($(this).data('src'), function(data, elm){
         var array = data.entries.slice(0, 2);
+        console.log(array);
         for(var i = 0; i < array.length; i++){
-            st = st + '<li>' + array[i].title + '</li>';
+          st = st + '<li><strong>' + array[i].title + '</strong><br>' + array[i].publishedDate + '</li>';
         }
         elm.html(st);
       }, $(this));
