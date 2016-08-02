@@ -33,7 +33,7 @@
                 "london-overground": false
             },
             "location": {
-                "row": 0,
+                "row": 1,
                 "column": 2,
                 "height": 1,
                 "width": 1
@@ -46,12 +46,12 @@
                 "format": "24-hour",
                 "date": false,
                 "radioAlarm": true,
-                "radioStation": "smooth",
-                "radioOnTime": "14:57"
+                "radioStation": "magic",
+                "radioOnTime": "15:06"
             },
             "location": {
-                "row": 1,
-                "column": 1,
+                "row": 2,
+                "column": 0,
                 "height": 1,
                 "width": 1
             },

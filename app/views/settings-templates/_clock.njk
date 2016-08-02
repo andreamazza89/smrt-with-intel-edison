@@ -22,11 +22,12 @@
   <form id="radioSettings" data-name="{{ widget.name }}">
     <label>
       <select name='radioStation'>
-       <option {% if widget.settings.radioStation == "magic" %}selected{% endif %}>magic</option>
-       <option {% if widget.settings.radioStation == "bbcRadio4" %}selected{% endif %}>bbcRadio4</option>
-       <option {% if widget.settings.radioStation == "smooth" %}selected{% endif %}>smooth</option>
-      <input type="time" value="{{ widget.settings.radioOnTime  }}" name="radioOnTime">
+        <option {% if widget.settings.radioStation == "magic" %}selected{% endif %}>magic</option>
+        <option {% if widget.settings.radioStation == "bbcRadio4" %}selected{% endif %}>bbcRadio4</option>
+        <option {% if widget.settings.radioStation == "smooth" %}selected{% endif %}>smooth</option>
+      </select>
       Alarm Time
+      <input type="time" value="{{ widget.settings.radioOnTime  }}" name="radioOnTime">
       <input type="submit">
     </label>
   </form>
