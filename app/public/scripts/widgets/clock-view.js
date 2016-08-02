@@ -1,23 +1,15 @@
+var strftime = require('strftime');
+
 (function(exports){
   function getTime(time, format) {
-    var hours   = twoDigitsZeroPadding(time.getHours());
-    var minutes = twoDigitsZeroPadding(time.getMinutes());
-    var seconds = twoDigitsZeroPadding(time.getSeconds());
-
     if (format === '12-hour') {
-      hours = (hours + 11) % 12 + 1;
-      var suffix = (hours >= 12)? 'pm' : 'am';
+      return '<span>' + strftime('%l:%M', time) + '</span><span>' + strftime(':%S', time) + '</span><span>' + strftime('%P', time) + '</span>';
     }
-
-    return hours + ':' + minutes + ':' + seconds + (suffix || '');
+    return strftime('%H:%M:%S', time);
   }
 
   function getDate(time) {
-    var year  = time.getFullYear();
-    var month = twoDigitsZeroPadding(time.getMonth() + 1);
-    var day   = twoDigitsZeroPadding(time.getDate());
-
-    return day.toString() + '/' + month.toString() + '/' + year.toString();
+    return '<span>' + strftime('%A', time) + '</span> <span>' + strftime('%o %B', time) + '</span>';
   }
 
   function updateAnalogClock(now, el) {

@@ -1,16 +1,11 @@
-<ul>
+<ul class="tubes">
   {% for line, enabled in widget.settings %}
-  {# {{ line }}
-  {{ enabled }}
-  {{ widget.settings[line] }} #}
-  {% if enabled %}
-    <li class="flex-container" id="{{ line }}">
-      <span class="tube-status" data-line="{{ line }}">Good service</span>
-       on the
-      <span class="tube-title tube-{{ line }}">
-        {{ line | replace('-city', ' & city') | replace('london-', ' ') | title }} line
-      </span>
-    </li>
-    {% endif %}
+  <li id="{{ line }}" {% if enabled == false %}class="hidden"{% endif %}>
+    <span class="tube-status" data-line="{{ line }}">Good service</span>
+     on the
+    <span class="tube-title tube-{{ line }}">
+      {{ line | replace('-city', ' & city') | replace('london-', ' ') | title }} line
+    </span>
+  </li>
   {% endfor %}
 <ul>

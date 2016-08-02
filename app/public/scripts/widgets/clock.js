@@ -12,15 +12,15 @@
     var format = $('#time').data('format');
     var now = new Date();
 
-    $('#time').text(getTime(now, format));
-    $('#date').text(getDate(now));
+    $('#time').html(getTime(now, format));
+    $('#date').html(getDate(now));
     updateAnalogClock(now, '#analog-clock');
 
     // Update time every second
     setInterval(function() {
       var now = new Date();
-      $('#time').text(getTime(now, format));
-      $('#date').text(getDate(now));
+      $('#time').html(getTime(now, format));
+      $('#date').html(getDate(now));
       updateAnalogClock(now, '#analog-clock');
       checkRadio(now);
     }, 1000);
