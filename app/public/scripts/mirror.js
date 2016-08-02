@@ -1,10 +1,12 @@
 var weather = require('./widgets/weather');
 var travel = require('./widgets/tfl-trains');
 var clock = require('./widgets/clock');
+var rss = require('./widgets/rss');
 
 weather.init();
 travel.init();
 clock.init();
+rss.init();
 
 var lastGestureTime = Date.now();
 

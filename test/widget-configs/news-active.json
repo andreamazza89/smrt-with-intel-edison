@@ -1,9 +1,11 @@
+
+
 {
     "widgets": [
         {
             "name": "weather",
             "settings": {
-                "location": "new york",
+                "location": "London",
                 "unit": "celsius"
             },
             "location": {
@@ -12,7 +14,7 @@
                 "height": 1,
                 "width": 1
             },
-            "active": true
+            "active": false
         },
         {
             "name": "tfl-trains",
@@ -33,41 +35,42 @@
                 "london-overground": false
             },
             "location": {
-                "row": 1,
+                "row": 0,
                 "column": 2,
                 "height": 1,
                 "width": 1
             },
-            "active": true
+            "active": false
         },
         {
             "name": "clock",
             "settings": {
-                "format": "24-hour",
-                "date": true,
-                "radioAlarm": true,
-                "radioOnTime": "15:28",
-                "radioStation": "smooth"
+                "format": "analog",
+                "radio": {
+                    "enabled": true,
+                    "triggerTime": "1748",
+                    "timeOut": "none",
+                    "station": "smooth"
+                },
+                "date": true
             },
             "location": {
-                "row": 2,
+                "row": 0,
                 "column": 0,
                 "height": 1,
                 "width": 1
             },
-            "active": true
+            "active": false
         },
         {
             "name": "rss",
             "settings": {
-                "sources": [
-                    "http://feeds.bbci.co.uk/news/rss.xml?edition=uk",
-                    "https://www.smashingmagazine.com/feed/"
-                ]
+                "sources": ["http://feeds.bbci.co.uk/news/rss.xml?edition=uk",
+                            "https://www.smashingmagazine.com/feed/"]
             },
             "location": {
-                "row": 1,
-                "column": 0,
+                "row": 0,
+                "column": 1,
                 "height": 1,
                 "width": 1
             },

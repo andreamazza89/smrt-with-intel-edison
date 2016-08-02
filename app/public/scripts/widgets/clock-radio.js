@@ -12,6 +12,7 @@
 
     var currentTimeHoursSeconds = (twoDigitsZeroPadding(dateTime.getHours()) + ":" + twoDigitsZeroPadding(dateTime.getMinutes()));
     var isRadioEnabled = $("#clock-widget .inner").data('radio-enabled');
+
     var triggerTime = $("#clock-widget .inner").data('radio-trigger-time');
     var timeOut = $("#clock-widget .inner").data('radio-timeout');
     var radioStation = $("#clock-widget .inner").data('radio-station');
