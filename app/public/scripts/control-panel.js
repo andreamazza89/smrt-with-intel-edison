@@ -39,10 +39,22 @@ $(document).ready(function(){
     getJSON(wjson.changeSetting, widgetName, setting);
   });
 
-  $('input:text').change(function(){
+  $('input:text').change(function(e){
+    e.preventDefault();
     var widgetName = $(this).data('name');
     var setting = [this.name, $(this).val()];
     getJSON(wjson.changeSetting, widgetName, setting);
+  });
+
+  $('#radioSettings').submit(function(e){
+    e.preventDefault();
+    var radioOnTime = $('#radioSettings').serializeArray()[1].value;
+    var radioStation = $('#radioSettings').serializeArray()[0].value;
+    var widgetName = $(this).data('name');
+    var timeSetting = ["radioOnTime", radioOnTime];
+    var stationSetting = ["radioStation", radioStation];
+    getJSON(wjson.changeSetting, widgetName, timeSetting);
+    setTimeout(function() { getJSON(wjson.changeSetting, widgetName, stationSetting); }, 100);
   });
 
   $('textarea').change(function(){

@@ -10,8 +10,9 @@
 
   function checkRadio(dateTime) {
 
-    var currentTimeHoursSeconds = (dateTime.getHours().toString() + dateTime.getMinutes().toString());
+    var currentTimeHoursSeconds = (twoDigitsZeroPadding(dateTime.getHours()) + ":" + twoDigitsZeroPadding(dateTime.getMinutes()));
     var isRadioEnabled = $("#clock-widget .inner").data('radio-enabled');
+
     var triggerTime = $("#clock-widget .inner").data('radio-trigger-time');
     var timeOut = $("#clock-widget .inner").data('radio-timeout');
     var radioStation = $("#clock-widget .inner").data('radio-station');
@@ -32,8 +33,16 @@
       $('#audio-player').trigger('pause');
       radioIsNotLoaded = true;
     }
-
   }
+
+  function twoDigitsZeroPadding(number) {
+    number = number.toString();
+    if (number.length < 2) {
+      return "0" + number
+    } else {
+      return number
+    }
+  };
 
   exports.checkRadio = checkRadio;
 

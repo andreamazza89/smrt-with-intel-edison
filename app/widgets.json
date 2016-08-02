@@ -3,7 +3,7 @@
         {
             "name": "weather",
             "settings": {
-                "location": "London",
+                "location": "new york",
                 "unit": "celsius"
             },
             "location": {
@@ -33,7 +33,7 @@
                 "london-overground": false
             },
             "location": {
-                "row": 2,
+                "row": 1,
                 "column": 2,
                 "height": 1,
                 "width": 1
@@ -44,16 +44,13 @@
             "name": "clock",
             "settings": {
                 "format": "analog",
-                "radio": {
-                    "enabled": true,
-                    "triggerTime": "1748",
-                    "timeOut": "none",
-                    "station": "smooth"
-                },
-                "date": true
+                "date": false,
+                "radioAlarm": true,
+                "radioOnTime": "17:32",
+                "radioStation": "smooth"
             },
             "location": {
-                "row": 0,
+                "row": 2,
                 "column": 0,
                 "height": 1,
                 "width": 1
