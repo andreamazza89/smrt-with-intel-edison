@@ -74,13 +74,22 @@ li  {
 }
 
 .widget-box-weather {
-  background-color: #2ecc71;
+  background-color: $green;
 }
 
 .widget-box-tfl-trains {
-  background-color: #3498db;
+  background-color: $blue;
 }
 
 .widget-box-clock {
-  background-color: #9b59b6;
+  background-color: $fuschia;
+}
+
+.widget-box-rss {
+  background-color: $purple;
+}
+
+textarea {
+  width: 100%;
+  display: block;
 }

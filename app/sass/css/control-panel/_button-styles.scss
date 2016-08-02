@@ -92,3 +92,12 @@ li.active {
     background-color: darken($fuschia, 10%);
   }
 }
+
+.rss-list-item.active {
+  .widget-name {
+    background-color: $purple;
+  }
+  .widget-check {
+    background-color: darken($purple, 10%);
+  }
+}
