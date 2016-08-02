@@ -3,12 +3,12 @@
         {
             "name": "weather",
             "settings": {
-                "location": "Barcelona",
+                "location": "London",
                 "unit": "celsius"
             },
             "location": {
-                "row": 1,
-                "column": 0,
+                "row": 0,
+                "column": 1,
                 "height": 1,
                 "width": 1
             },
@@ -17,20 +17,20 @@
         {
             "name": "tfl-trains",
             "settings": {
-                "bakerloo": true,
+                "bakerloo": false,
                 "central": true,
                 "circle": false,
-                "district": true,
+                "district": false,
                 "hammersmith-city": true,
                 "jubilee": false,
                 "metropolitan": true,
-                "northern": true,
+                "northern": false,
                 "piccadilly": true,
-                "victoria": false,
-                "waterloo-city": true,
-                "dlr": true,
-                "tram": true,
-                "london-overground": true
+                "victoria": true,
+                "waterloo-city": false,
+                "dlr": false,
+                "tram": false,
+                "london-overground": false
             },
             "location": {
                 "row": 0,
@@ -50,7 +50,7 @@
                     "timeOut": "none",
                     "station": "smooth"
                 },
-                "date": false
+                "date": true
             },
             "location": {
                 "row": 0,

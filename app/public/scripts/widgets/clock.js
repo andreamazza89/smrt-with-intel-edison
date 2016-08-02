@@ -14,6 +14,7 @@
 
     $('#time').text(getTime(now, format));
     $('#date').text(getDate(now));
+    updateAnalogClock(now, '#analog-clock');
 
     // Update time every second
     setInterval(function() {

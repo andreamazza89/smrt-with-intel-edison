@@ -74,8 +74,11 @@ browserSync.init({
   proxy: 'localhost:3000',
   files: ['./app/widgets.json'],
   open: false,
-  logLevel: "silent"
+  logLevel: 'silent',
+  notify: false
 });
+
+// browserSync.notify('Updating...');
 
 app.listen(3000, function(){
   console.log("\x1b[36mControl Panel\x1b[0m\nhttp://localhost:3000\n");
