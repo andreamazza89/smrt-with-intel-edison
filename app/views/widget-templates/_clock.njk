@@ -1,31 +1,30 @@
 <div class="inner" data-timezone="{{ widget.settings.timezone }}"
-                   data-radio-enabled="{{ widget.settings.radio.enabled }}"
-                   data-radio-trigger-time="{{ widget.settings.radio.triggerTime }}"
-                   data-radio-timeout="{{ widget.settings.radio.timeOut }}"
-                   data-radio-station="{{ widget.settings.radio.station }}"></div>
-<br>
-
-<div id="location">
-  Location
+  data-radio-enabled="{{ widget.settings.radio.enabled }}"
+  data-radio-trigger-time="{{ widget.settings.radio.triggerTime }}"
+  data-radio-timeout="{{ widget.settings.radio.timeOut }}"
+  data-radio-station="{{ widget.settings.radio.station }}">
 </div>
 
-<br>
-
-<div id="time">
-  Time
+{% if widget.settings.format == 'analog' %}
+<div id="analog-clock" class="analog-clock-container">
+  <div class="analog-clock">
+    <div class="hour hands"></div>
+    <div class="minute hands"></div>
+    <div class="second hands"></div>
+  </div>
 </div>
+{% else %}
+<div id="time" data-format="{{ widget.settings.format }}">
+  00:00:00
+</div>
+{% endif %}
 
-<br>
-
+{% if widget.settings.date %}
 <div id="date">
-  Date
+  01/01/2000
 </div>
+{% endif %}
 
 <audio id='audio-player'>
   <source id="radio-station" type="audio/mpeg">
 </audio>
-
-<div id='clockWrapper'>
-  <div class="inner" data-timezone="{{ widget.settings.timezone }}" ></div>
-  <canvas id="clock" width=180% height=180% ></canvas>
-</div>

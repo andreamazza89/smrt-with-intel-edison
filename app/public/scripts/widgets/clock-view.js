@@ -1,21 +1,29 @@
 (function(exports){
+  function getTime(time, format) {
+    var hours   = twoDigitsZeroPadding(time.getHours());
+    var minutes = twoDigitsZeroPadding(time.getMinutes());
+    var seconds = twoDigitsZeroPadding(time.getSeconds());
 
-  function displayDateTime(dateTime) {
-    var hours   = twoDigitsZeroPadding(dateTime.getHours());
-    var minutes = twoDigitsZeroPadding(dateTime.getMinutes());
-    var seconds = twoDigitsZeroPadding(dateTime.getSeconds());
+    if (format === '12-hour') {
+      hours = (hours + 11) % 12 + 1;
+      var suffix = (hours >= 12)? 'pm' : 'am';
+    }
 
-    var year  = dateTime.getFullYear();
-    var month = dateTime.getMonth() + 1;
-    var day   = dateTime.getDate();
+    return hours + ':' + minutes + ':' + seconds + (suffix || '');
+  }
 
-    var timeZone = $("#clock-widget .inner").data('timezone');
-    var time = hours + ':' + minutes + ':' + seconds;
-    var date = day.toString() + '-' + month.toString() + '-' + year.toString();
+  function getDate(time) {
+    var year  = time.getFullYear();
+    var month = twoDigitsZeroPadding(time.getMonth() + 1);
+    var day   = twoDigitsZeroPadding(time.getDate());
 
-    $("#clock-widget #location").html(timeZone);
-    $("#clock-widget #time").html(time);
-    $("#clock-widget #date").html(date);
+    return day.toString() + '/' + month.toString() + '/' + year.toString();
+  }
+
+  function updateAnalogClock(now, el) {
+    $(el).find('.hour').css({ transform: 'rotate(' + (360 / 12) * (now.getHours() + (now.getMinutes() * 1/60)) + 'deg)' });
+    $(el).find('.minute').css({ transform: 'rotate(' + (360 / 60) * now.getMinutes() + 'deg)' });
+    $(el).find('.second').css({ transform: 'rotate(' + (360 / 60) * now.getSeconds() + 'deg)' });
   }
 
   function twoDigitsZeroPadding(number) {
@@ -27,6 +35,8 @@
     }
   }
 
-  exports.displayDateTime = displayDateTime;
+  exports.getTime = getTime;
+  exports.getDate = getDate;
+  exports.updateAnalogClock = updateAnalogClock;
 
 })(this);

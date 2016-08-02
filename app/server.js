@@ -1,30 +1,29 @@
-var fs = require('fs');
-var path = require('path');
-var bodyParser = require('body-parser');
-var browserify = require('browserify-middleware');
-var express = require('express');
-var app = express();
-var nunjucks = require('nunjucks');
-var sass = require('node-sass-middleware');
+var fs = require('fs'),
+    path = require('path'),
+    bodyParser = require('body-parser'),
+    browserify = require('browserify-middleware'),
+    express = require('express'),
+    app = express(),
+    nunjucks = require('nunjucks'),
+    sass = require('node-sass-middleware');
 
 var WIDGETS_FILE = __dirname + (process.env.widget_path || '/widgets') +  '.json';
 var browserSync = require('browser-sync').create();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.set('view engine', 'njk');
 
 nunjucks.configure(__dirname + '/views', {
-    watch: true,
-    express: app
-  });
+  watch: true,
+  express: app
+});
 
 app.use(sass({
   src: __dirname + '/sass',
   dest:__dirname + '/public',
   outputStyle: 'compressed'
 }));
-
-app.set('view engine', 'njk');
 
 app.use(express.static('./app/public'));
 app.get('/scripts/mirror-bundle.js', browserify(__dirname + '/public/scripts/mirror.js'));
@@ -50,7 +49,6 @@ app.get('/mirror', function(req, res){
   });
 });
 
-
 app.get('/api/widgets', function(req, res) {
   fs.readFile(WIDGETS_FILE, function(err, data) {
     if (err) {
@@ -75,9 +73,14 @@ app.post('/api/widgets', function(req, res) {
 browserSync.init({
   proxy: 'localhost:3000',
   files: ['./app/widgets.json'],
-  startPath: '/mirror'
+  open: false,
+  logLevel: 'silent',
+  notify: false
 });
 
+// browserSync.notify('Updating...');
+
 app.listen(3000, function(){
-  console.log('listening at http://localhost:3000');
+  console.log("\x1b[36mControl Panel\x1b[0m\nhttp://localhost:3000\n");
+  console.log("\x1b[36mMirror\x1b[0m\nhttp://localhost:3001/mirror");
 });

@@ -3,34 +3,8 @@
         {
             "name": "weather",
             "settings": {
-                "location": "Barcelona",
-                "unit": "fahrenheit"
-            },
-            "location": {
-                "row": 0,
-                "column": 0,
-                "height": 1,
-                "width": 1
-            },
-            "active": true
-        },
-        {
-            "name": "tfl-trains",
-            "settings": {
-                "bakerloo": true,
-                "central": true,
-                "circle": false,
-                "district": true,
-                "hammersmith-city": true,
-                "jubilee": false,
-                "metropolitan": true,
-                "northern": true,
-                "piccadilly": true,
-                "victoria": false,
-                "waterloo-city": true,
-                "dlr": true,
-                "tram": true,
-                "london-overground": true
+                "location": "London",
+                "unit": "celsius"
             },
             "location": {
                 "row": 0,
@@ -41,19 +15,46 @@
             "active": true
         },
         {
-            "name": "clock",
+            "name": "tfl-trains",
             "settings": {
-                "format": "24",
-                "radio": {
-                  "enabled": true,
-                  "triggerTime": "1748",
-                  "timeOut": "none",
-                  "station": "smooth"
-                }
+                "bakerloo": false,
+                "central": true,
+                "circle": false,
+                "district": false,
+                "hammersmith-city": true,
+                "jubilee": false,
+                "metropolitan": true,
+                "northern": false,
+                "piccadilly": true,
+                "victoria": true,
+                "waterloo-city": false,
+                "dlr": false,
+                "tram": false,
+                "london-overground": false
             },
             "location": {
                 "row": 0,
                 "column": 2,
+                "height": 1,
+                "width": 1
+            },
+            "active": true
+        },
+        {
+            "name": "clock",
+            "settings": {
+                "format": "analog",
+                "radio": {
+                    "enabled": true,
+                    "triggerTime": "1748",
+                    "timeOut": "none",
+                    "station": "smooth"
+                },
+                "date": true
+            },
+            "location": {
+                "row": 0,
+                "column": 0,
                 "height": 1,
                 "width": 1
             },
