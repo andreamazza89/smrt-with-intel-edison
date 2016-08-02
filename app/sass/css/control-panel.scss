@@ -1,3 +1,13 @@
 @import "variables";
 @import "control-panel/default";
 @import "control-panel/button-styles";
+
+h1 span {
+  display: inline-block;
+  transition: transform 1s;
+  transform-origin: center;
+
+  &:hover {
+    transform: rotate(3600deg);
+  }
+}

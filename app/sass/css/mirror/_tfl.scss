@@ -7,6 +7,16 @@
     transition: max-height 5s;
     max-height: 999px;
   }
+
+  &.date {
+    max-height: none;
+    transition: opacity 0.3s;
+    opacity: 0;
+
+    .active & {
+      opacity: 1;
+    }
+  }
 }
 
 .tubes li {
