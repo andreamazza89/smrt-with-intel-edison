@@ -45,6 +45,15 @@ $(document).ready(function(){
     getJSON(wjson.changeSetting, widgetName, setting);
   });
 
+  $('textarea').change(function(){
+    var widgetName = $(this).data('name');
+    var array = $(this).val().split(',');
+    var setting = $.map(array, function(val){
+      return val.trim();
+    });
+    getJSON(wjson.changeSetting, widgetName, ['sources', setting]);
+  });
+
   $('.widget-settings-button').click(function() {
     var widgetName = $(this).data('name');
     $('#widget-settings-'+widgetName).toggleClass('active');

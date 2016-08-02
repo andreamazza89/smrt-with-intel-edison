@@ -63,8 +63,10 @@
         {
             "name": "rss",
             "settings": {
-              "sources": ["http://feeds.bbci.co.uk/news/rss.xml?edition=uk",
-                          "https://www.smashingmagazine.com/feed/"]
+                "sources": [
+                    "http://feeds.bbci.co.uk/news/rss.xml?edition=uk",
+                    "https://www.smashingmagazine.com/feed/"
+                ]
             },
             "location": {
                 "row": 2,
