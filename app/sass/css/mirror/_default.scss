@@ -22,9 +22,32 @@ html, body {
     opacity: 0;
   }
 }
+
 .inner {
   position: absolute;
 }
+
+.hidden {
+  max-height: 0px;
+  transition: max-height 3.5s;
+  overflow: hidden;
+
+  .active & {
+    transition: max-height 5s;
+    max-height: 999px;
+  }
+
+  &.date {
+    max-height: none;
+    transition: opacity 0.3s;
+    opacity: 0;
+
+    .active & {
+      opacity: 1;
+    }
+  }
+}
+
 
 #clockWrapper {
   position: relative;
