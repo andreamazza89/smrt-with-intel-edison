@@ -47,6 +47,9 @@ $(document).ready(function(){
 
   $('.widget-settings-button').click(function() {
     var widgetName = $(this).data('name');
+    $('.widget-settings').each(function(){
+      if($(this).data('name') != widgetName) { $(this).removeClass('active'); }
+    });
     $('#widget-settings-'+widgetName).toggleClass('active');
   });
 
