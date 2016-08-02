@@ -1,6 +1,4 @@
 ;(function(exports){
-  var testFunction;
-
   function bind(elm, evt, f) {
     if (elm.addEventListener) {
       elm.addEventListener(evt, f, false);

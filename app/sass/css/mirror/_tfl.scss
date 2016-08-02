@@ -1,3 +1,18 @@
+.hidden {
+  max-height: 0px;
+  transition: max-height 3.5s;
+  overflow: hidden;
+
+  .active & {
+    transition: max-height 5s;
+    max-height: 999px;
+  }
+}
+
+.tubes li {
+  list-style: none;
+}
+
 .tube {
   &-title {
     line-height: 2;
