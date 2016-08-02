@@ -31,14 +31,14 @@ describe('Mirror page',function(){
       process.env.widget_path = '/../test/widget-configs/multiple-active';
       browser
         .url('/mirror')
-        .waitForText('#tfl-widget');
+        .waitForText('#tfl-trains-widget');
 
       browser
         .waitForText('#weather-widget');
     });
 
     it('displays multiple widgets', function(){
-      expect(browser.getText('#tfl-widget')).to.not.be.empty;
+      expect(browser.getText('#tfl-trains-widget')).to.not.be.empty;
       expect(browser.getText('#weather-widget')).to.not.be.empty;
     });
   });
