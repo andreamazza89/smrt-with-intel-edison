@@ -12,6 +12,7 @@ var positionKey = gridFuncs.positionKey,
 var getJSON = jsonFuncs.getJSON,
     setJSON = jsonFuncs.setJSON;
 var widgetJSON = frameworkFuncs.widgetJSON;
+// var weatherLocation = require('./../../data/weatherLocations');
 
 $(document).ready(function(){
 
@@ -26,6 +27,12 @@ $(document).ready(function(){
     getJSON(wjson.toggleActive, widgetName, gridLocation);
     setDragBox(this, gridLocation);
   });
+
+  $('#location-list').on('change', function(){
+    var widgetName = $(this).data('name');
+    var setting = [this.name, $(this).val()];
+    getJSON(wjson.changeSetting, widgetName, setting);
+  })
 
   $('input:radio').click(function(){
     var widgetName = $(this).data('name');

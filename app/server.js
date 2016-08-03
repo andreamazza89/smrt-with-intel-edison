@@ -35,7 +35,10 @@ app.get('/', function(req, res){
       console.error(err);
       process.exit(1);
     }
-    res.render('control-panel', { widgetData: JSON.parse(data).widgets });
+    res.render('control-panel', {
+      widgetData: JSON.parse(data).widgets,
+      weatherLocations: require(__dirname + '/data/weatherLocations')
+    });
   });
 });
 

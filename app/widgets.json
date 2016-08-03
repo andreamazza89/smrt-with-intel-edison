@@ -3,7 +3,7 @@
         {
             "name": "weather",
             "settings": {
-                "location": "new york",
+                "location": "352409",
                 "unit": "celsius"
             },
             "location": {
