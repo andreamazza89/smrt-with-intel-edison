@@ -21,7 +21,7 @@
 }
 
 .temp {
-  font-size: 7em;
+  font-size: $bignumber;
   text-align: center;
 
   .column-2 & { float: right; }
