@@ -1,5 +1,4 @@
 (function(exports){
-
   var radioIsNotLoaded = true;
 
   var stations = {
@@ -9,7 +8,6 @@
   };
 
   function checkRadio(dateTime) {
-
     var currentTimeHoursSeconds = (twoDigitsZeroPadding(dateTime.getHours()) + ":" + twoDigitsZeroPadding(dateTime.getMinutes()));
     var isRadioEnabled = $("#clock-widget .inner").data('radio-enabled');
 

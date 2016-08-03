@@ -1,14 +1,20 @@
 var updateWeather = require('./widgets/weather');
-var travel = require('./widgets/tfl-trains');
-var clock = require('./widgets/clock');
-var rss = require('./widgets/rss');
+var updateTflTrains = require('./widgets/tfl-trains');
+var updateClock = require('./widgets/clock');
+var updateRSS = require('./widgets/rss');
+var bind = require('./leapFiles/bind');
 
 updateWeather();
 setInterval(updateWeather, 300000);
 
-travel.init();
-clock.init();
-rss.init();
+updateTflTrains();
+setInterval(updateTflTrains, 300000);
+
+updateClock();
+setInterval(updateClock, 1000);
+
+updateRSS();
+setInterval(updateRSS, 300000)
 
 var lastGestureTime = Date.now();
 
@@ -43,14 +49,6 @@ $(document).ready(function(){
   });
 
   controller.connect();
-
-  function bind(elm, evt, f) {
-    if (elm.addEventListener) {
-      elm.addEventListener(evt, f, false);
-    } else if (elm.attachEvent) {
-      elm.attachEvent('on' + evt, f);
-    }
-  }
 
   $('.mirror-widget').each(function(){
     bind(this, 'mouseenter', function(){
