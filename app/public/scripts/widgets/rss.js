@@ -1,5 +1,5 @@
 var strftime = require('strftime');
-var bind = require('./../leapFiles/bind');
+var bind = require('./../leap-motion/bind');
 
 function parseRSS(url, callback, elm) {
   $.ajax({

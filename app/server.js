@@ -25,6 +25,7 @@ app.use(sass({
 }));
 
 app.use(express.static('./app/public'));
+app.use('/lib', express.static('./app/lib'));
 app.get('/scripts/mirror-bundle.js', browserify(__dirname + '/public/scripts/mirror.js'));
 app.get('/scripts/cp-bundle.js', browserify(__dirname + '/public/scripts/control-panel.js'));
 
