@@ -43,15 +43,15 @@
         {
             "name": "clock",
             "settings": {
-                "format": "12-hour",
+                "format": "24-hour",
                 "date": true,
                 "radioAlarm": false,
                 "radioOnTime": "17:32",
                 "radioStation": "smooth"
             },
             "location": {
-                "row": 1,
-                "column": 1,
+                "row": 2,
+                "column": 2,
                 "height": 1,
                 "width": 1
             },
