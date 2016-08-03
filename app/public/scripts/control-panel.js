@@ -48,11 +48,11 @@ $(document).ready(function(){
 
   $('#radioSettings').submit(function(e){
     e.preventDefault();
-    var radioOnTime = $('#radioSettings').serializeArray()[1].value;
-    var radioStation = $('#radioSettings').serializeArray()[0].value;
+    var formElements = {};
+    $('#radioSettings').serializeArray().forEach(function(field) { formElements[field.name] = field.value })
     var widgetName = $(this).data('name');
-    var timeSetting = ["radioOnTime", radioOnTime];
-    var stationSetting = ["radioStation", radioStation];
+    var timeSetting = ["radioOnTime", formElements["radioOnTime"]];
+    var stationSetting = ["radioStation", formElements["radioStation"]];
     getJSON(wjson.changeSetting, widgetName, timeSetting);
     setTimeout(function() { getJSON(wjson.changeSetting, widgetName, stationSetting); }, 100);
   });
