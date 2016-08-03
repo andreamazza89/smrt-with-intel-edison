@@ -1,9 +1,11 @@
-var weather = require('./widgets/weather');
+var updateWeather = require('./widgets/weather');
 var travel = require('./widgets/tfl-trains');
 var clock = require('./widgets/clock');
 var rss = require('./widgets/rss');
 
-weather.init();
+updateWeather();
+setInterval(updateWeather, 300000);
+
 travel.init();
 clock.init();
 rss.init();
