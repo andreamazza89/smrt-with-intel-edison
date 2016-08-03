@@ -1,3 +1,7 @@
+.clock-container {
+  display: inline-block;
+}
+
 .analog-clock {
   border: solid 4px $white;
   border-radius: 50%;
@@ -50,19 +54,21 @@
 
 .digital-clock {
   font-size: 6em;
-  font-family: 'Lato', sans-serif;
+
+  .double-stack {
+    font-size: 0.38em;
+    display: block;
+  }
+
+  & > div {
+    display: inline-block;
+  }
 }
 
 .date {
   font-size: 1.8em;
-  font-family: 'Lato', sans-serif;
-}
 
-.seconds {
-  font-size: 0.38em;
-  display: block;
-}
-
-.translucent {
-  opacity: 0.6;
+  .translucent {
+    color: darken($white, 40%);
+  }
 }
