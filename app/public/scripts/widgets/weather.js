@@ -1,7 +1,10 @@
 var weatherData = require('./weatherData');
 var api = 'http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/352409?res=3hourly&key=b821346b-d530-4054-a2e6-2fee05048742';
-var textContainer = $('#weather-widget .text');
+var celsiusContainer = $('#celsius');
+var fahrenheitContainer = $('#fahrenheit');
+var unitContainer = $('#weather-widget .unit');
 var iconContainer = $('#weather-widget .icon');
+var descriptionContainer = $('#weather-widget .description');
 
 function printWeather(data) {
   var parameters = data.Wx.Param,
@@ -10,8 +13,10 @@ function printWeather(data) {
   var currentWeather = weatherData[values[parameters[8].name]];
   var currentTemperature = values[parameters[3].name];
 
-  textContainer.html(currentTemperature + '&deg;<sup>c</sup> ' + currentWeather.name);
+  celsiusContainer.html(currentTemperature);
+  fahrenheitContainer.html(Math.round(currentTemperature*1.8+32));
   iconContainer.html(currentWeather.icon);
+  descriptionContainer.html(currentWeather.name);
 }
 
 function ajaxCall(){

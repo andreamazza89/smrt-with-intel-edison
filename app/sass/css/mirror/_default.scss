@@ -65,6 +65,7 @@ html, body {
   position: absolute;
   transition: all 0.3s ease;
   overflow-y: scroll;
+  display: flex;
 
   &.active {
     // transform: scale(1.1);
@@ -74,13 +75,16 @@ html, body {
 .column {
   &-0 {
     left: 0;
+    justify-content: flex-start;
   }
   &-1 {
     left: 33.333%;
+    justify-content: center;
     text-align: center;
   }
   &-2 {
     left: 66.666%;
+    justify-content: flex-end;
     text-align: right;
   }
 }
@@ -88,12 +92,15 @@ html, body {
 .row {
   &-0 {
     top: 0;
+    align-items: flex-start;
   }
   &-1 {
     top: 33.333%;
+    align-items: center;
   }
   &-2 {
     top: 66.666%;
+    align-items: flex-end;
   }
 }
 

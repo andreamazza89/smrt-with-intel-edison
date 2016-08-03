@@ -1,7 +1,25 @@
-<div class="icon">
+<div class="top-container">
+
+  <div class="temp-container">
+    {% if widget.settings.unit == "celsius" %}
+      <div id="celsius" class="temp">
+      </div>
+    {% else %}
+      <div id="fahrenheit" class="temp">
+      </div>
+    {% endif %}
+
+    <div class="unit">
+      <span class="double-stack">&deg;{% if widget.settings.unit == "celsius" %}C{% else %}F{% endif %}</span>
+    </div>
+
+  </div>
+
+  <div class="icon">
+  </div>
 
 </div>
 
-<div class="text">
+<div class="description">
 
 </div>

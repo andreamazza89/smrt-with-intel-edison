@@ -1,18 +1,42 @@
 .icon {
   width: 35%;
-  height: 60%;
+  height: 100%;
   display: flex;
   align-items: center;
+
   .column-2 & { float: right; }
   .column-1 & { float: left; }
   .column-0 & { float: left; }
 }
 
-.temp {
+.top-container  {
   height: 60%;
-  text-align: center;
   display: flex;
   align-items: flex-end;
+}
+
+.temp-container  {
+  display: flex;
+  align-items: flex-start;
+}
+
+.temp {
+  font-size: $bignumber;
+  text-align: center;
+
+  .column-2 & { float: right; }
+  .column-1 & { float: left; }
+  .column-0 & { float: left; }
+}
+
+.unit {
+
+  .double-stack {
+    font-size: 2em;
+    display: block;
+    padding-top: 1.53rem;
+  }
+
   .column-2 & { float: right; }
   .column-1 & { float: left; }
   .column-0 & { float: left; }
@@ -22,8 +46,9 @@
   width: 100%;
   height: 40%;
   float: left;
-  font-size: 2em;
-  padding: 0 1rem 0 1rem;
+  font-size: 1.6em;
+  padding: 0 0.5rem;
+
   .column-2 & { text-align: right; }
   .column-1 & { text-align: left; }
   .column-0 & { text-align: left; }
@@ -35,11 +60,10 @@
   margin: 0;
 }
 
-sup {
-  font-size: .2em;
-  vertical-align: super;
-}
-
 svg {
   overflow: visible;
+}
+
+sup {
+  font-size: .2em;
 }

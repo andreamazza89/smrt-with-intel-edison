@@ -14,7 +14,9 @@
       {% set widthClass = 'width-' + widget.location.width %}
 
       <div class="{{ rowClass }} {{ columnClass }} {{ heightClass }} {{ widthClass }} mirror-widget" id="{{widget.name}}-widget">
-        {% include './widget-templates/_' + widget.name + '.njk' %}
+        <div>
+          {% include './widget-templates/_' + widget.name + '.njk' %}
+        </div>
       </div>
     {% endif %}
   {% endfor %}
