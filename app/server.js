@@ -70,17 +70,20 @@ app.post('/api/widgets', function(req, res) {
   });
 });
 
+var port = process.env.NODE_PORT || 4000;
+
 browserSync.init({
-  proxy: 'localhost:3000',
+  proxy: 'localhost:' + port,
   files: ['./app/widgets.json'],
   open: false,
   logLevel: 'silent',
-  notify: false
+  notify: false,
+  port: (parseInt(port) + 1)
 });
 
-app.listen(3000, function(){
-  console.log("\x1b[36mControl Panel\x1b[0m\nhttp://localhost:3000\n");
-  console.log("\x1b[36mMirror\x1b[0m\nhttp://localhost:3001/mirror");
+app.listen(port, function(){
+  console.log("\x1b[36mControl Panel\x1b[0m\nhttp://localhost:" + parseInt(port) + "\n");
+  console.log("\x1b[36mMirror\x1b[0m\nhttp://localhost:" + (parseInt(port) + 1)+ "/mirror");
 });
 
 function getJSONPath(){

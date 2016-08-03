@@ -28,7 +28,7 @@
     "mocha-phantomjs": "^4.1.0"
   },
   "scripts": {
-    "test": "./node_modules/.bin/wdio wdio.conf.js",
+    "test": "NODE_PORT=5000 ./node_modules/.bin/wdio wdio.conf.js",
     "start": "node app/server.js"
   },
   "repository": {
