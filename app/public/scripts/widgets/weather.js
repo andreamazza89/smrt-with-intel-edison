@@ -14,7 +14,7 @@ function printWeather(data) {
   var currentTemperature = values[parameters[3].name];
 
   celsiusContainer.html(currentTemperature);
-  fahrenheitContainer.html(currentTemperature*1.8+32);
+  fahrenheitContainer.html(Math.round(currentTemperature*1.8+32));
   iconContainer.html(currentWeather.icon);
   descriptionContainer.html(currentWeather.name);
 }
