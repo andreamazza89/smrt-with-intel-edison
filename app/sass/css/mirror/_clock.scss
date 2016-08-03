@@ -1,3 +1,7 @@
+.clock-container {
+  display: inline-block;
+}
+
 .analog-clock {
   border: solid 4px $white;
   border-radius: 50%;
@@ -21,6 +25,7 @@
 
   &-container {
     max-width: 200px;
+    margin: 0 auto 10px;
   }
 
   .hands {
@@ -44,5 +49,26 @@
   .second {
     border-top: solid 1px $white;
     width: 40%;
+  }
+}
+
+.digital-clock {
+  font-size: 6em;
+
+  .double-stack {
+    font-size: 0.38em;
+    display: block;
+  }
+
+  & > div {
+    display: inline-block;
+  }
+}
+
+.date {
+  font-size: 1.8em;
+
+  .translucent {
+    color: darken($white, 40%);
   }
 }

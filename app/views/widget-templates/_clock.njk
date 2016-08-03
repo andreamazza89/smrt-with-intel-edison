@@ -5,22 +5,28 @@
   data-radio-station="{{ widget.settings.radioStation }}">
 </div>
 
+<div class="clock-container">
 {% if widget.settings.format == 'analog' %}
-<div id="analog-clock" class="analog-clock-container">
-  <div class="analog-clock">
-    <div class="hour hands"></div>
-    <div class="minute hands"></div>
-    <div class="second hands"></div>
+  <div id="analog-clock" class="analog-clock-container">
+    <div class="analog-clock">
+      <div class="hour hands"></div>
+      <div class="minute hands"></div>
+      <div class="second hands"></div>
+    </div>
   </div>
-</div>
-{% else %}
-<div id="time" data-format="{{ widget.settings.format }}">
-  00:00:00
-</div>
-{% endif %}
+  {% else %}
+  <div id="time" class="digital-clock" data-format="{{ widget.settings.format }}">
+    <div class="digital-time"></div><div>
+      <span class="double-stack seconds"></span>
+      <span class="double-stack ampm"></span>
+    </div>
+  </div>
+  {% endif %}
 
-<div id="date" {% if widget.settings.date == false %}class="hidden date"{% endif %}>
-  01/01/2000
+  <div id="date" class="date{% if widget.settings.date == false %} hidden{% endif %}">
+    <span class="calendar-day"></span> |
+    <span class="calendar-date translucent"></span>
+  </div>
 </div>
 
 <audio id='audio-player'>

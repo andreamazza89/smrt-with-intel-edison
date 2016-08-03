@@ -3,19 +3,30 @@ var strftime = require('strftime');
 (function(exports){
   function getTime(time, format) {
     if (format === '12-hour') {
-      return '<span>' + strftime('%l:%M', time) + '</span><span>' + strftime(':%S', time) + '</span><span>' + strftime('%P', time) + '</span>';
+      return { time: strftime('%l:%M', time), seconds: strftime(':%S', time), ampm: strftime('%P', time) };
     }
-    return strftime('%H:%M:%S', time);
+    return { time: strftime('%H:%M', time), seconds: strftime(':%S', time) };
   }
 
   function getDate(time) {
-    return '<span>' + strftime('%A', time) + '</span> <span>' + strftime('%o %B', time) + '</span>';
+    return { day: strftime('%A', time), date: strftime('%o %B', time) };
   }
 
-  function updateAnalogClock(now, el) {
-    $(el).find('.hour').css({ transform: 'rotate(' + (360 / 12) * (now.getHours() + (now.getMinutes() * 1/60)) + 'deg)' });
-    $(el).find('.minute').css({ transform: 'rotate(' + (360 / 60) * now.getMinutes() + 'deg)' });
-    $(el).find('.second').css({ transform: 'rotate(' + (360 / 60) * now.getSeconds() + 'deg)' });
+  function updateAnalogClock(now) {
+    $('#analog-clock .hour').css({ transform: 'rotate(' + (360 / 12) * (now.getHours() + (now.getMinutes() * 1/60)) + 'deg)' });
+    $('#analog-clock .minute').css({ transform: 'rotate(' + (360 / 60) * now.getMinutes() + 'deg)' });
+    $('#analog-clock .second').css({ transform: 'rotate(' + (360 / 60) * now.getSeconds() + 'deg)' });
+  }
+
+  function updateTime(time, format) {
+    $('#time .digital-time').html(getTime(time, format).time);
+    $('#time .seconds').html(getTime(time, format).seconds);
+    $('#time .ampm').html(getTime(time, format).ampm);
+  }
+
+  function updateDate(date) {
+    $('#date .calendar-day').html(getDate(date).day);
+    $('#date .calendar-date').html(getDate(date).date);
   }
 
   function twoDigitsZeroPadding(number) {
@@ -30,5 +41,7 @@ var strftime = require('strftime');
   exports.getTime = getTime;
   exports.getDate = getDate;
   exports.updateAnalogClock = updateAnalogClock;
+  exports.updateDate = updateDate;
+  exports.updateTime = updateTime;
 
 })(this);

@@ -1,0 +1,45 @@
+.icon {
+  width: 35%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  .column-2 & { float: right; }
+  .column-1 & { float: left; }
+  .column-0 & { float: left; }
+}
+
+.temp {
+  height: 60%;
+  text-align: center;
+  display: flex;
+  align-items: flex-end;
+  .column-2 & { float: right; }
+  .column-1 & { float: left; }
+  .column-0 & { float: left; }
+}
+
+.description {
+  width: 100%;
+  height: 40%;
+  float: left;
+  font-size: 2em;
+  padding: 0 1rem 0 1rem;
+  .column-2 & { text-align: right; }
+  .column-1 & { text-align: left; }
+  .column-0 & { text-align: left; }
+}
+
+.temp h1  {
+  font-size: 8em;
+  font-weight: 100;
+  margin: 0;
+}
+
+sup {
+  font-size: .2em;
+  vertical-align: super;
+}
+
+svg {
+  overflow: visible;
+}
