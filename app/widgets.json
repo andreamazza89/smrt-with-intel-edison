@@ -43,10 +43,10 @@
         {
             "name": "clock",
             "settings": {
-                "format": "24-hour",
-                "date": true,
-                "radioAlarm": false,
-                "radioOnTime": "17:32",
+                "format": "analog",
+                "date": false,
+                "radioAlarm": true,
+                "radioOnTime": "10:16",
                 "radioStation": "smooth"
             },
             "location": {
