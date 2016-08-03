@@ -46,3 +46,22 @@
     width: 40%;
   }
 }
+
+.digital-clock {
+  font-size: 6em;
+  font-family: 'Lato', sans-serif;
+}
+
+.date {
+  font-size: 1.8em;
+  font-family: 'Lato', sans-serif;
+}
+
+.seconds {
+  font-size: 0.38em;
+  display: block;
+}
+
+.translucent {
+  opacity: 0.6;
+}

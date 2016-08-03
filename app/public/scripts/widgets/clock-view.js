@@ -3,13 +3,14 @@ var strftime = require('strftime');
 (function(exports){
   function getTime(time, format) {
     if (format === '12-hour') {
-      return '<span>' + strftime('%l:%M', time) + '</span><span>' + strftime(':%S', time) + '</span><span>' + strftime('%P', time) + '</span>';
+      return '<span>' + strftime('%l:%M', time) + '</span><div style="display: inline-block; margin-left: 5px"><span class="seconds">' + strftime(':%S', time) + ' </span><span class="seconds">' + strftime('%P', time) + '</span></div>';
     }
-    return strftime('%H:%M:%S', time);
+    return '<span>' + strftime('%H:%M', time) + '</span><div style="display: inline-block; margin-left: 5px"><span class="seconds">' + strftime(':%S', time) + '</span></div>';
+    // return '<span>' + strftime('%H:%M', time) + '</span><span class="seconds">' + strftime(':%S', time) + '</span>';
   }
 
   function getDate(time) {
-    return '<span>' + strftime('%A', time) + '</span> <span>' + strftime('%o %B', time) + '</span>';
+    return '<span>' + strftime('%A', time) + ' | </span> <span class="translucent">' + strftime('%o %B', time) + '</span>';
   }
 
   function updateAnalogClock(now, el) {
