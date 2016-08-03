@@ -1,8 +1,11 @@
 // Metoffice API
 var icons = require('./icons').icons;
 var api = 'http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/352409?res=3hourly&key=b821346b-d530-4054-a2e6-2fee05048742';
-var textContainer = $('#weather-widget .text');
+var celsiusContainer = $('#celsius');
+var fahrenheitContainer = $('#fahrenheit');
+var unitContainer = $('#weather-widget .unit');
 var iconContainer = $('#weather-widget .icon');
+var descriptionContainer = $('#weather-widget .description');
 
 // N = Night, D = Day
 var weatherType = {
@@ -56,8 +59,10 @@ var weatherType = {
 	    	var parameters = data.Wx.Param;
 	      var values = data.DV.Location.Period[0].Rep[1];
 
-				textContainer.html(values[parameters[3].name] + '&deg;<sup>c</sup> ' + weatherType[values[parameters[8].name]]);
+				celsiusContainer.html(values[parameters[3].name]);
+				fahrenheitContainer.html((values[parameters[3].name]*1.8+32));
         iconContainer.html(icons[values[parameters[8].name]]);
+				descriptionContainer.html(weatherType[values[parameters[8].name]]);
       },
       error: function(err){
         console.log(err);
