@@ -1,6 +1,9 @@
 var weatherData = require('./weatherData');
-var textContainer = $('#weather-widget .text');
+var celsiusContainer = $('#celsius');
+var fahrenheitContainer = $('#fahrenheit');
+var unitContainer = $('#weather-widget .unit');
 var iconContainer = $('#weather-widget .icon');
+var descriptionContainer = $('#weather-widget .description');
 
 function getURL(id){
   return 'http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/' + id + '?res=3hourly&key=b821346b-d530-4054-a2e6-2fee05048742';
@@ -13,13 +16,15 @@ function printWeather(data) {
   var currentWeather = weatherData[values[parameters[8].name]];
   var currentTemperature = values[parameters[3].name];
 
-  textContainer.html(currentTemperature + '&deg;<sup>c</sup> ' + currentWeather.name);
+  celsiusContainer.html(currentTemperature);
+  fahrenheitContainer.html(Math.round(currentTemperature*1.8+32));
   iconContainer.html(currentWeather.icon);
+  descriptionContainer.html(currentWeather.name);
 }
 
 function ajaxCall(){
 	'use strict';
-  var url = getURL($('#weather-widget .text').data('city'));
+  var url = getURL(descriptionContainer.data('city'));
 
   $.ajax({
     url: url,

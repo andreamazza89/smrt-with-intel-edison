@@ -7,6 +7,7 @@ var fs = require('fs'),
     nunjucks = require('nunjucks'),
     sass = require('node-sass-middleware');
 
+var port = parseInt(process.env.NODE_PORT) || 4000;
 var browserSync = require('browser-sync').create();
 
 app.use(bodyParser.json());
@@ -73,17 +74,19 @@ app.post('/api/widgets', function(req, res) {
   });
 });
 
+
 browserSync.init({
-  proxy: 'localhost:3000',
-  files: ['./app/widgets.json'],
+  proxy: 'localhost:' + port,
+  files: ['./app/widgets.json', './app/sass/**/*.scss'],
   open: false,
   logLevel: 'silent',
-  notify: false
+  notify: false,
+  port: (port + 1)
 });
 
-app.listen(3000, function(){
-  console.log("\x1b[36mControl Panel\x1b[0m\nhttp://localhost:3000\n");
-  console.log("\x1b[36mMirror\x1b[0m\nhttp://localhost:3001/mirror");
+app.listen(port, function(){
+  console.log("\x1b[36mControl Panel\x1b[0m\nhttp://localhost:" + port + "\n");
+  console.log("\x1b[36mMirror\x1b[0m\nhttp://localhost:" + (port + 1)+ "/mirror");
 });
 
 function getJSONPath(){

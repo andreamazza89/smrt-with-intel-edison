@@ -1,11 +1,19 @@
 html, body {
   background-color: $black;
   color: $white;
-  // cursor: none;
+  cursor: none;
   margin: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   font-family: $lato;
+  padding-left: 40px;
+  padding-right: 20px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: lighten($blue, 20%);
 }
 
 .wrapper {
@@ -15,6 +23,7 @@ html, body {
 }
 
 .main-content {
+  position: relative;
   height: 100%;
   transition: opacity 0.3s ease;
 
@@ -64,7 +73,8 @@ html, body {
   padding: 1rem;
   position: absolute;
   transition: all 0.3s ease;
-  overflow-y: scroll;
+  // overflow-y: scroll;
+  display: flex;
 
   &.active {
     // transform: scale(1.1);
@@ -74,13 +84,16 @@ html, body {
 .column {
   &-0 {
     left: 0;
+    justify-content: flex-start;
   }
   &-1 {
     left: 33.333%;
+    justify-content: center;
     text-align: center;
   }
   &-2 {
     left: 66.666%;
+    justify-content: flex-end;
     text-align: right;
   }
 }
@@ -88,12 +101,15 @@ html, body {
 .row {
   &-0 {
     top: 0;
+    align-items: flex-start;
   }
   &-1 {
     top: 33.333%;
+    align-items: center;
   }
   &-2 {
     top: 66.666%;
+    align-items: flex-end;
   }
 }
 

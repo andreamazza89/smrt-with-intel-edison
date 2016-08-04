@@ -2,7 +2,7 @@
 
 {% block styles %}
   <link rel="stylesheet" href="/css/mirror.css" charset="utf-8">
-  <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
 {% endblock %}
 
 {% block mainContent %}
@@ -14,7 +14,9 @@
       {% set widthClass = 'width-' + widget.location.width %}
 
       <div class="{{ rowClass }} {{ columnClass }} {{ heightClass }} {{ widthClass }} mirror-widget" id="{{widget.name}}-widget">
-        {% include './widget-templates/_' + widget.name + '.njk' %}
+        <div>
+          {% include './widget-templates/_' + widget.name + '.njk' %}
+        </div>
       </div>
     {% endif %}
   {% endfor %}

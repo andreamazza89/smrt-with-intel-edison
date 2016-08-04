@@ -18,7 +18,7 @@ function init() {
       var array = data.entries.slice(0, 2);
 
       for(var i = 0; i < array.length; i++){
-        st = st + '<li><strong>' + array[i].title + '</strong><br><em>' + strftime('%a %o %b, %H:%M%P', new Date(array[i].publishedDate)) + '</em><br><span class="content">' + array[i].content + '</span></li>';
+        st = st + '<li><strong>' + array[i].title + '</strong><br><span class="content">' + array[i].content + '</span></li>';
       }
       elm.html(st);
 
