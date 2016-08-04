@@ -1,4 +1,4 @@
-(function(exports){
+
   var radioIsNotLoaded = true;
 
   var stations = {
@@ -7,7 +7,8 @@
     smooth: 'http://media-the.musicradio.com:80/SmoothLondonMP3'
   };
 
-  function checkRadio(dateTime) {
+  function checkRadio() {
+    var dateTime = new Date();
     var currentTimeHoursSeconds = (twoDigitsZeroPadding(dateTime.getHours()) + ":" + twoDigitsZeroPadding(dateTime.getMinutes()));
     var isRadioEnabled = $("#clock-widget .inner").data('radio-enabled');
 
@@ -42,6 +43,4 @@
     }
   };
 
-  exports.checkRadio = checkRadio;
-
-})(this);
+  module.exports = checkRadio;

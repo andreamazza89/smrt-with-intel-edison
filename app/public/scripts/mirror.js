@@ -2,6 +2,7 @@ var updateWeather = require('./widgets/weather');
 var updateTflTrains = require('./widgets/tfl-trains');
 var updateClock = require('./widgets/clock');
 var updateRSS = require('./widgets/rss');
+var checkRadio = require('./widgets/clock-radio');
 
 require('./leap-motion/leap-setup');
 
@@ -15,4 +16,7 @@ updateClock();
 setInterval(updateClock, 1000);
 
 updateRSS();
-setInterval(updateRSS, 300000)
+setInterval(updateRSS, 300000);
+
+checkRadio();
+setInterval(updateClock, 1000);
