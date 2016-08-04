@@ -5,10 +5,15 @@ html, body {
   margin: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   font-family: $lato;
   padding-left: 40px;
   padding-right: 20px;
   -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: lighten($blue, 20%);
 }
 
 .wrapper {

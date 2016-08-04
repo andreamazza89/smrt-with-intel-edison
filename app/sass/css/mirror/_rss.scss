@@ -1,4 +1,11 @@
 #rss-widget {
+  position: relative;
+  z-index: 100;
+
+  & > div {
+    background-color: $black;    
+  }
+
   ul {
     padding: 0;
   }

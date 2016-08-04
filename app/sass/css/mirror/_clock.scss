@@ -1,5 +1,7 @@
 .clock-container {
   display: inline-block;
+  position: relative;
+  z-index: 1;
   // font-weight: 300;
 }
 
@@ -74,6 +76,7 @@
   text-align: center;
 
   .translucent {
-    color: darken($white, 40%);
+    color: darken($white, 50%);
+    font-weight: bold;
   }
 }
