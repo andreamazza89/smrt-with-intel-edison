@@ -18,6 +18,7 @@
 .temp-container  {
   display: flex;
   align-items: flex-start;
+  font-weight: 300;
 }
 
 .temp {
@@ -30,8 +31,8 @@
 }
 
 .unit {
-
   .double-stack {
+    font-weight: 400;
     font-size: 2em;
     display: block;
     padding-top: 1.53rem;
@@ -46,12 +47,13 @@
   width: 100%;
   height: 40%;
   float: left;
-  font-size: 1.6em;
+  font-size: $smallfont;
   padding: 0 0.5rem;
+  text-align: center;
 
-  .column-2 & { text-align: right; }
-  .column-1 & { text-align: left; }
-  .column-0 & { text-align: left; }
+  // .column-2 & { text-align: right; }
+  // .column-1 & { text-align: left; }
+  // .column-0 & { text-align: left; }
 }
 
 .temp h1  {

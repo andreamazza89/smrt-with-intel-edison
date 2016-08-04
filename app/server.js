@@ -74,7 +74,7 @@ var port = process.env.NODE_PORT || 4000;
 
 browserSync.init({
   proxy: 'localhost:' + port,
-  files: ['./app/widgets.json'],
+  files: ['./app/widgets.json', './app/sass/**/*.scss'],
   open: false,
   logLevel: 'silent',
   notify: false,

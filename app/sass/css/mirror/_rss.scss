@@ -1,6 +1,12 @@
 #rss-widget {
+  ul {
+    padding: 0;
+  }
+
   li {
+    list-style: none;
     margin-bottom: 1.5em;
+    font-size: $smallfont;
   }
 
   .content {

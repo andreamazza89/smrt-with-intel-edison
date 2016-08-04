@@ -1,11 +1,14 @@
 html, body {
   background-color: $black;
   color: $white;
-  // cursor: none;
+  cursor: none;
   margin: 0;
   width: 100%;
   height: 100%;
   font-family: $lato;
+  padding-left: 40px;
+  padding-right: 20px;
+  -webkit-font-smoothing: antialiased;
 }
 
 .wrapper {
@@ -15,6 +18,7 @@ html, body {
 }
 
 .main-content {
+  position: relative;
   height: 100%;
   transition: opacity 0.3s ease;
 
@@ -64,7 +68,7 @@ html, body {
   padding: 1rem;
   position: absolute;
   transition: all 0.3s ease;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   display: flex;
 
   &.active {

@@ -1,5 +1,6 @@
 .clock-container {
   display: inline-block;
+  // font-weight: 300;
 }
 
 .analog-clock {
@@ -53,11 +54,13 @@
 }
 
 .digital-clock {
+  font-weight: 300;
   font-size: $bignumber;
 
   .double-stack {
     font-size: 0.38em;
     display: block;
+    font-weight: 400;
   }
 
   & > div {
@@ -67,6 +70,8 @@
 
 .date {
   font-size: 1.8em;
+  font-weight: 400;
+  text-align: center;
 
   .translucent {
     color: darken($white, 40%);
