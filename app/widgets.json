@@ -3,12 +3,12 @@
         {
             "name": "weather",
             "settings": {
-                "location": "new york",
+                "location": "352409",
                 "unit": "celsius"
             },
             "location": {
                 "row": 0,
-                "column": 0,
+                "column": 2,
                 "height": 1,
                 "width": 1
             },
@@ -33,8 +33,8 @@
                 "london-overground": false
             },
             "location": {
-                "row": 0,
-                "column": 1,
+                "row": 1,
+                "column": 2,
                 "height": 1,
                 "width": 1
             },
@@ -44,14 +44,14 @@
             "name": "clock",
             "settings": {
                 "format": "24-hour",
-                "date": false,
+                "date": true,
                 "radioAlarm": true,
                 "radioOnTime": "11:31",
                 "radioStation": "smooth"
             },
             "location": {
-                "row": 2,
-                "column": 2,
+                "row": 0,
+                "column": 0,
                 "height": 1,
                 "width": 1
             },
@@ -61,8 +61,8 @@
             "name": "rss",
             "settings": {
                 "sources": [
-                    "http://feeds.bbci.co.uk/news/rss.xml?edition=uk",
-                    "http://rss.cnn.com/rss/edition.rss"
+                    "http://feeds.bbci.co.uk/news/uk/rss.xml",
+                    "http://feeds.bbci.co.uk/news/technology/rss.xml"
                 ]
             },
             "location": {

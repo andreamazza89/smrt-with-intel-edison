@@ -1,7 +1,12 @@
 <div>
   <form action="">
   <label>
-    Location: <input type="text" name="location" data-name="{{ widget.name }}" value="{{ widget.settings.location }}">
+    Location:
+    <select name="location" data-name="{{ widget.name }}" value="{{ widget.settings.location }}" id="location-list">
+    {% for id, city in weatherLocations %}
+      <option value="{{ id }}"{% if id == widget.settings.location %} selected{% endif %}>{{ city }}</option>
+    {% endfor %}
+    </select>
   </label>
   <label>
     <input type="radio" name="unit" value="celsius" data-name="{{ widget.name }}" {% if widget.settings.unit == "celsius" %}checked="checked"{% endif %}> Celsius

@@ -1,10 +1,13 @@
 var weatherData = require('./weatherData');
-var api = 'http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/352409?res=3hourly&key=b821346b-d530-4054-a2e6-2fee05048742';
 var celsiusContainer = $('#celsius');
 var fahrenheitContainer = $('#fahrenheit');
 var unitContainer = $('#weather-widget .unit');
 var iconContainer = $('#weather-widget .icon');
 var descriptionContainer = $('#weather-widget .description');
+
+function getURL(id){
+  return 'http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/' + id + '?res=3hourly&key=b821346b-d530-4054-a2e6-2fee05048742';
+}
 
 function printWeather(data) {
   var parameters = data.Wx.Param,
@@ -21,9 +24,10 @@ function printWeather(data) {
 
 function ajaxCall(){
 	'use strict';
+  var url = getURL(descriptionContainer.data('city'));
 
   $.ajax({
-    url: api,
+    url: url,
     success: function(data) {
     	printWeather(data.SiteRep);
     },
