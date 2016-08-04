@@ -15,7 +15,7 @@ function init() {
   $('#rss-widget').find('ul').each(function(){
     var st = '';
     parseRSS($(this).data('src'), function(data, elm){
-      var array = data.entries.slice(0, 2);
+      var array = data.entries.slice(0, 4);
 
       for(var i = 0; i < array.length; i++){
         st = st + '<li><strong>' + array[i].title + '</strong><br><span class="content">' + array[i].content + '</span></li>';

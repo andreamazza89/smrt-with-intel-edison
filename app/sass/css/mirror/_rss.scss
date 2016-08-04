@@ -1,9 +1,10 @@
 #rss-widget {
   position: relative;
   z-index: 100;
+  line-height: 1.4;
 
   & > div {
-    background-color: $black;    
+    background-color: $black;
   }
 
   ul {
@@ -12,7 +13,7 @@
 
   li {
     list-style: none;
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
     font-size: $smallfont;
   }
 
@@ -23,8 +24,9 @@
     transition: max-height 1s;
   }
 
-  li.active {
+  &.active {
     .content {
+      // margin-top: 0.5em;
       transition: max-height 1.5s;
       max-height: 999px;
     }
