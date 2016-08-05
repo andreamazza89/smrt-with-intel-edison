@@ -90,5 +90,5 @@ app.listen(port, function(){
 });
 
 function getJSONPath(){
-  return __dirname + (process.env.widget_path || '/widgets') +  '.json';
+  return __dirname + (process.env.widget_path || '/data/widgets') +  '.json';
 }
