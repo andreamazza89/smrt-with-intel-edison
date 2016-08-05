@@ -14,12 +14,21 @@ Please ensure you have the following installed:
 1. `cd` into the project
 1. Install the dependencies with `npm install`
 
+#### Testing
+- Run `npm test` to run the test suite
+
+#### Server
+- Run `npm start` to start the server
+
 -----
 
-## Server
-1. Run `npm start` to start the server
-1. The mirror display can be accessed at [http://localhost:4001/mirror](http://localhost:4001/mirror)
-1. The control panel can be accessed at [http://localhost:4000](http://localhost:4000)
+## Usage
+#### Mirror Display
+- The mirror display can be accessed at [http://localhost:4001/mirror](http://localhost:4001/mirror)
+- It should automatically refresh if the configuration changes
 
-## Testing
-1. Run `npm test` to run the test suite
+#### Control Panel
+- The control panel can be accessed at [http://localhost:4000](http://localhost:4000)
+- Clicking the tick icon will toggle the widget enabled/disabled
+- Clicking the cog icon will expand a popup to configure an individual widget
+- The grid represents the layout of the mirror view. Widgets can be dragged and dropped to change position
