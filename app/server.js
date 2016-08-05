@@ -77,7 +77,7 @@ app.post('/api/widgets', function(req, res) {
 
 browserSync.init({
   proxy: 'localhost:' + port,
-  files: ['./app/widgets.json', './app/sass/**/*.scss'],
+  files: ['./app/data/widgets.json', './app/sass/**/*.scss'],
   open: false,
   logLevel: 'silent',
   notify: false,
