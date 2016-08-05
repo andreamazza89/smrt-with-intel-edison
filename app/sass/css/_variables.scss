@@ -26,6 +26,8 @@ $lato: 'Lato', sans-serif;
 $bignumber: 6em;
 $smallfont: 1.6em;
 
+$small-screen-up: '(min-width: 600px)';
+
 *, *:after, *:before {
   box-sizing: border-box;
 }

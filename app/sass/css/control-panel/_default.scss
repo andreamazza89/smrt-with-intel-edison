@@ -9,6 +9,16 @@ h1  {
   color: #6D7B89;
   font-weight: lighter;
   font-size: 50px;
+
+  span {
+    display: inline-block;
+    transition: transform 1s;
+    transform-origin: center;
+
+    &:hover {
+      transform: rotate(3600deg);
+    }
+  }
 }
 
 ul  {
@@ -26,10 +36,18 @@ li  {
 }
 
 .main-content {
-  width: 950px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   min-height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+
+  @media #{$small-screen-up}{
+    text-align: left;
+    width: 990px;
+  }
 }
 
 #grid-container {
@@ -37,13 +55,22 @@ li  {
   height: 615px;
   float: left;
   position: relative;
+  display: none;
+
+  @media #{$small-screen-up}{
+    display: block;
+  }
 }
 
 #widget-list-container  {
-  width: 300px;
+  width: 280px;
   height: 400px;
-  float: left;
-  margin-left: 20px;
+  margin: 0 auto;
+
+  @media #{$small-screen-up}{
+    float: left;
+    margin-left: 20px;
+  }
 }
 
 .grid-box {
@@ -92,4 +119,5 @@ li  {
 textarea {
   width: 100%;
   display: block;
+  padding: 10px;
 }
