@@ -4,8 +4,6 @@ var updateClock = require('./widgets/clock');
 var updateRSS = require('./widgets/rss');
 var checkRadio = require('./widgets/clock-radio');
 
-require('./leap-motion/leap-setup');
-
 updateWeather();
 setInterval(updateWeather, 300000);
 

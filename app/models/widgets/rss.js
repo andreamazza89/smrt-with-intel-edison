@@ -1,5 +1,4 @@
 var strftime = require('strftime');
-var bind = require('./../leap-motion/bind');
 
 function parseRSS(url, callback, elm) {
   $.ajax({
@@ -21,16 +20,6 @@ function init() {
         st = st + '<li><strong>' + array[i].title + '</strong><br><span class="content">' + array[i].content + '</span></li>';
       }
       elm.html(st);
-
-      $('#rss-widget li').each(function(){
-        bind(this, 'mouseenter', function(){
-          $(this).addClass('active');
-        });
-
-        bind(this, 'mouseleave', function(){
-          $(this).removeClass('active');
-        });
-      });
     }, $(this));
   });
 }
