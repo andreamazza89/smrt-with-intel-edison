@@ -1,5 +1,5 @@
 var expect = require('chai').expect;
-var widgetJSON = require('../../app/public/scripts/control-panel/framework.js').widgetJSON;
+var widgetJSON = require('../../app/models/control-panel/framework.js').widgetJSON;
 var sinon = require('sinon');
 
 describe('Widget JSON', function(){
