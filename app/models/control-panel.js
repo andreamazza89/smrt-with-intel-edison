@@ -34,12 +34,6 @@ $(document).ready(function(){
     getJSON(wjson.changeSetting, widgetName, setting);
   })
 
-  $('input:radio').click(function(){
-    var widgetName = $(this).data('name');
-    var setting = [this.name, $(this).val()];
-    getJSON(wjson.changeSetting, widgetName, setting);
-  });
-
   $('input:checkbox').change(function(){
     var widgetName = $(this).data('name');
     var setting = [$(this).val(), $(this).is(':checked')];
@@ -51,17 +45,6 @@ $(document).ready(function(){
     var widgetName = $(this).data('name');
     var setting = [this.name, $(this).val()];
     getJSON(wjson.changeSetting, widgetName, setting);
-  });
-
-  $('#radioSettings').submit(function(e){
-    e.preventDefault();
-    var formElements = {};
-    $('#radioSettings').serializeArray().forEach(function(field) { formElements[field.name] = field.value })
-    var widgetName = $(this).data('name');
-    var timeSetting = ["radioOnTime", formElements["radioOnTime"]];
-    var stationSetting = ["radioStation", formElements["radioStation"]];
-    getJSON(wjson.changeSetting, widgetName, timeSetting);
-    setTimeout(function() { getJSON(wjson.changeSetting, widgetName, stationSetting); }, 100);
   });
 
   $('textarea').change(function(){
