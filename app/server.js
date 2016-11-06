@@ -5,7 +5,7 @@ var fs = require('fs'),
     express = require('express'),
     app = express(),
     nunjucks = require('nunjucks');
-    sass = require('node-sass-middleware'); //sass disabled for intel-edison
+    //sass = require('node-sass-middleware'); //sass disabled for intel-edison
 
 var port = parseInt(process.env.NODE_PORT) || 4000;
 var browserSync = require('browser-sync').create();
@@ -20,11 +20,11 @@ nunjucks.configure(__dirname + '/views', {
 });
 
 //sass disabled for intel edison
-app.use(sass({
-  src: __dirname + '/sass',
-  dest:__dirname + '/public',
-  outputStyle: 'compressed'
-}));
+//app.use(sass({
+//  src: __dirname + '/sass',
+//  dest:__dirname + '/public',
+//  outputStyle: 'compressed'
+//}));
 
 app.use(express.static('./app/public'));
 app.use('/lib', express.static('./app/lib'));
