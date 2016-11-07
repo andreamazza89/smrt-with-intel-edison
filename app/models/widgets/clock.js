@@ -1,4 +1,3 @@
-var checkRadio = require('./clock-radio').checkRadio;
 var getTime = require('./clock-view').getTime;
 var getDate = require('./clock-view').getDate;
 var updateAnalogClock = require('./clock-view').updateAnalogClock;
