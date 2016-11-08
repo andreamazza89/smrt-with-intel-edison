@@ -1,6 +1,18 @@
-# S.M.R.T mk II
+# S.M.R.T with Intel Edison
 
 ## Getting Started
+
+### Hardware
+You'll need an Intel Edison (obviously) for running the server and a computer/Raspberry Pi to handle the display.
+
+- Plug the Intel Edison into your computer/Raspberry Pi via USB and open up the terminal (this works on OSX, not yet tested on the Pi). Note: one USB port is for power, the other is for data transfer
+- Run `ls /dev/cu.usbserial-*` to find the Edison's ID
+- Run `screen /dev/xx.usbserial-XXXX 115200 –L` where XXXX is the ID from the step above (`sudo apt-get install screen` if you don't have it)
+- You'll be met with an empty terminal.. just press enter twice and the login stuff should appear
+- `configure_edison --wifi` to log into your wifi network. Once connected, it should print a local IP address that you can use to SSH into the device (`ctrl+A` then `ctrl+\` to exit screen)
+- If you manage to `SSH root@ip-address` successfully, you can unplug the Edison from your computer! Wahey..
+
+### Software
 
 #### Prerequisites
 Please ensure you have the following installed:
